@@ -40,11 +40,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="274-j6-7YI"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="tintColor" name="IconGray"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -65,25 +66,51 @@
                                     <constraint firstAttribute="height" constant="1" id="GS5-0C-sFg"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-Kj-dy1">
+                                <rect key="frame" x="0.0" y="760" width="390" height="1"/>
+                                <color key="backgroundColor" name="TextSeparGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="TTI-Rz-Bdh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APU-7P-Ju2">
+                                <rect key="frame" x="314" y="665" width="56" height="56"/>
+                                <color key="backgroundColor" name="TextSeparGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="O94-1A-wcD"/>
+                                    <constraint firstAttribute="width" constant="56" id="Wpk-Pr-5Ih"/>
+                                </constraints>
+                                <color key="tintColor" name="HighlightBlue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="22"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BackGroundWB"/>
                         <constraints>
+                            <constraint firstItem="WaG-Kj-dy1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0G0-Zz-V9x"/>
                             <constraint firstItem="OGF-MS-SNP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CyV-mS-PJo"/>
                             <constraint firstItem="8Fx-I5-sbu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NBG-pt-50f"/>
                             <constraint firstItem="0WO-qe-KAX" firstAttribute="top" secondItem="8Fx-I5-sbu" secondAttribute="bottom" id="O0D-5w-3Pj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="8Fx-I5-sbu" secondAttribute="top" id="PQS-CU-buk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WaG-Kj-dy1" secondAttribute="trailing" id="XfL-Lv-PJc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OGF-MS-SNP" secondAttribute="trailing" id="Xjp-lQ-PfC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="APU-7P-Ju2" secondAttribute="trailing" constant="20" id="ddz-Of-cWv"/>
                             <constraint firstItem="OGF-MS-SNP" firstAttribute="top" secondItem="8Fx-I5-sbu" secondAttribute="bottom" id="k73-b4-l5N"/>
                             <constraint firstItem="0WO-qe-KAX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kgi-MO-DIu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0WO-qe-KAX" secondAttribute="bottom" id="lmG-4h-XXJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WaG-Kj-dy1" secondAttribute="bottom" id="nCV-CL-zzw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0WO-qe-KAX" secondAttribute="trailing" id="pCz-el-CQ4"/>
                             <constraint firstItem="8Fx-I5-sbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sIt-F3-SWs"/>
+                            <constraint firstItem="APU-7P-Ju2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-40" id="uQg-lS-IFe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kjN-Xm-PxR"/>
                     <connections>
                         <outlet property="postTableView" destination="0WO-qe-KAX" id="oto-yP-oMQ"/>
+                        <outlet property="writePostButton" destination="APU-7P-Ju2" id="mOL-X9-2R4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -454,6 +481,7 @@
         <image name="message.and.waveform.fill" catalog="system" width="128" height="112"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="BackGroundWB">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -466,6 +494,9 @@
         </namedColor>
         <namedColor name="PostTableViewWB">
             <color red="0.96470588235294119" green="0.96862745098039216" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSeparGray">
+            <color red="0.90980392156862744" green="0.92549019607843142" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextWB">
             <color red="0.090196078431372548" green="0.094117647058823528" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

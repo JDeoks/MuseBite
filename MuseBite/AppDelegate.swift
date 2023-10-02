@@ -8,14 +8,15 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKCommon
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       // 네이티브 앱 키를 사용해 iOS SDK를 초기화
+        // 파이어베이스 초기화
+        FirebaseApp.configure()
+        // 네이티브 앱 키를 사용해 iOS SDK를 초기화
         let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
         KakaoSDK.initSDK(appKey: nativeAppKey as! String)
         return true
