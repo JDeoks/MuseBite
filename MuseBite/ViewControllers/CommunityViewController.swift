@@ -9,8 +9,10 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import RxSwift
 
 class CommunityViewController: UIViewController {
+    let disposeBag = DisposeBag()
     
     @IBOutlet var postTableView: UITableView!
     @IBOutlet var writePostButton: UIButton!
@@ -20,6 +22,7 @@ class CommunityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        bind()
         reloadData()
     }
     
@@ -59,10 +62,16 @@ class CommunityViewController: UIViewController {
         }
     }
     
+    func bind() {
+        DataManager.shared.fetchDataDone
+            .subscribe(onNext: { _ in
+                self.postTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     func reloadData() {
-        DataManager.shared.fetchRecentPostData(handler: {
-            self.postTableView.reloadData()
-        })
+        DataManager.shared.fetchRecentPostData()
     }
     
     @IBAction func uploadButtonClicked(_ sender: Any) {

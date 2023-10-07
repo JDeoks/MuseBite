@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         initUI()
         // Do any additional setup after loading the view.
     }
+    
     func initUI() {
         self.tabBar.tintColor = UIColor(named: "BLACK")
     }
@@ -25,7 +26,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         print("MainTabBarController - tabBarController(shouldSelect) index = \(index!)")
 //        LoginManager.shared.saveUserLoginStatus(isLoggedIn: false)
         if index == 1 {
-            if LoginManager.shared.isUserLoggedIn() == true {
+            if LoginManager.shared.isLoggedIn() == true {
                 print("로그인 되어있음")
                 let myPageVC = self.storyboard?.instantiateViewController(identifier: "MyPageViewController") as! MyPageViewController
                 myPageVC.modalPresentationStyle = .overFullScreen

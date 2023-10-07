@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import RxSwift
 
 class DataManager {
     
@@ -17,7 +18,10 @@ class DataManager {
     
     var postList: [PostModel] = []
     
-    func fetchRecentPostData(handler: @escaping ()->()) {
+    ///fetchRecentPostData 성공여부 플래그
+    let fetchDataDone = PublishSubject<Void>()
+    
+    func fetchRecentPostData() {
         print("CommunityViewController - fetchRecentPostData()")
         // Firestore 콜렉션 초기화
         let postCollection = Firestore.firestore().collection("post").order(by: "createdTime", descending: true)
@@ -33,28 +37,28 @@ class DataManager {
                 print("No documents found.")
                 return
             }
-            // 배열 초기화
             self.postList.removeAll()
-            // 배열에 있는 각 도큐먼트에 접근하거나 처리
+            // 배열에 있는 각 도큐먼트에 접근
             for document in documents {
-                let documentData = document.data()
-                // 도큐먼트 데이터 확인
-                print("Document data: \(documentData)")
-                // TODO: 파싱하는건 VC가 안함
-                let title = documentData["title"] as! String
-                let desc = documentData["desc"] as! String
-                let createdTime = documentData["createdTime"] as! Timestamp
-                let post = PostModel(id: document.documentID, title: title, desc: desc, createdTime: createdTime.dateValue())
+                let post = PostModel(document: document)
                 self.postList.append(post)
-                
             }
-            // UI 업데이트를 메인 스레드에서 수행
-//            DispatchQueue.main.async {
-//                self.postTableView.reloadData()
-//            }
-            
-            handler()
+            fetchDataDone.onNext(())
         }
+    }
+    
+    func getUser(userID: String) -> String {
+        let userCollection = Firestore.firestore().collection("user")
+        let doc = userCollection.document(userID)
+        doc.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                return 
+            } else {
+                print("Document does not exist")
+            }
+        }
+        return "hello"
     }
     
 }

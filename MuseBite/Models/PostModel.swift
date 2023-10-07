@@ -6,22 +6,26 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
+import FirebaseAnalytics
 
 class PostModel {
     /// Post 고유 아이디
     var id: String
     var title: String
     var desc: String
-    private var createdTime: Date
-//    var writer: String?
+    var createdTime: Date
+    var writer: String
 //    var audioURL: URL?
 //    var startTime: Int?
     
-    init(id: String, title: String, desc: String, createdTime: Date) {
-        self.id = id
-        self.title = title
-        self.desc = desc
-        self.createdTime = createdTime
+    init(document: QueryDocumentSnapshot) {
+        self.id = document.documentID
+        self.title = document.data()["title"] as! String
+        self.desc = document.data()["desc"] as! String
+        self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
+        self.writer = ""//document.data()["writer"] as! String
     }
     
     func getCreateTimeStr() -> String {

@@ -28,16 +28,11 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-//    
-//    override func sizeThatFits(_ size: CGSize) -> CGSize {
-//            var sizeThatFits = super.sizeThatFits(size)
-//            sizeThatFits.height += 12 // 위아래로 6포인트씩 간격을 추가합니다.
-//            return sizeThatFits
-//    }
     
     func setData(data: PostModel) {
         titleLabel.text = data.title
         descLabel.text = data.desc
         creationTimeLabel.text = data.getCreateTimeStr()
+        writerLabel.text = data.writer
     }
 }

@@ -9,11 +9,10 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    lazy var kakaoAuthVM: KakaoAuthVM = { KakaoAuthVM() }()
+    lazy var kakaoAuthManager: KakaoAuthManager = { KakaoAuthManager() }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -22,7 +21,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func kakaoLoginButtonClicked(_ sender: Any) {
-        kakaoAuthVM.handleKakaoLogin()
+        kakaoAuthManager.handleKakaoLogin()
         self.dismiss(animated: true)
     }
 }

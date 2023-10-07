@@ -25,12 +25,16 @@ class UploadViewController: UIViewController {
         ref = db.collection("post").addDocument(data: [
             "title": titleTextField.text ?? "",
             "desc": descTextField.text ?? "",
-            "createdTime": Timestamp(date: Date())
+            "createdTime": Timestamp(date: Date()),
+            // TODO: - writer 추가
+            "writer": ""
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                DataManager.shared.fetchRecentPostData()
+                self.dismiss(animated: true)
             }
         }
     }
@@ -41,6 +45,5 @@ class UploadViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         uploadPost()
-        self.dismiss(animated: true)
     }
 }
