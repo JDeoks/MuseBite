@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         print("MainTabBarController - tabBarController(shouldSelect) index = \(index!)")
 //        LoginManager.shared.saveUserLoginStatus(isLoggedIn: false)
         if index == 1 {
-            if LoginManager.shared.isLoggedIn() == true {
+            if LoginManager.shared.getLoginStatus() == true {
                 print("로그인 되어있음")
                 let myPageVC = self.storyboard?.instantiateViewController(identifier: "MyPageViewController") as! MyPageViewController
                 myPageVC.modalPresentationStyle = .overFullScreen

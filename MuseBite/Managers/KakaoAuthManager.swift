@@ -32,7 +32,7 @@ class KakaoAuthManager: ObservableObject {
                 }
                 else {
                     print("loginWithKakaoAccount() success.")
-                    LoginManager.shared.saveUserLoginStatus(isLoggedIn: true)
+                    LoginManager.shared.setLoginStatus(true)
                     //do something
                     _ = oauthToken
                     print("kakao_\(String(describing: oauthToken!.idToken))")
@@ -50,7 +50,6 @@ class KakaoAuthManager: ObservableObject {
             else {
                 print(oauthToken!)
                 print("loginWithKakaoTalk() success.")
-                LoginManager.shared.saveUserLoginStatus(isLoggedIn: true)
                 print("kakao_\(String(describing: oauthToken!.idToken!))")
                 LoginManager.shared.setUserByOAuthID(oauthID: "kakao_\(String(describing: oauthToken!.idToken!))")
             }
@@ -65,7 +64,7 @@ class KakaoAuthManager: ObservableObject {
             }
             else {
                 print("logout() success.")
-                LoginManager.shared.saveUserLoginStatus(isLoggedIn: false)
+                LoginManager.shared.setLoginStatus(false)
             }
         }
     }

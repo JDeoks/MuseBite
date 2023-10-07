@@ -11,7 +11,8 @@ import FirebaseFirestore
 import FirebaseAnalytics
 
 class UserModel {
-    /// Post 고유 아이디
+    
+    /// user Doc 고유 아이디
     var userID: String
     var createdTime: Date
     var oauthID: String
