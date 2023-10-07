@@ -39,7 +39,8 @@ class LoginManager {
                         print("신규 가입 유저")
                         var ref: DocumentReference? = nil
                         // TODO: - 닉네임 추가 수정
-                        let nickName = oauthID.prefix(10)
+                        let nickName = String(oauthID.prefix(10))
+                        self.setUserNickName(nickName: nickName)
                         ref = userCollection.addDocument(data: [
                             "createdTime": Timestamp(date: Date()),
                             "oauthID": oauthID,
@@ -66,6 +67,14 @@ class LoginManager {
     }
     
     func getUserID() -> String {
-        return UserDefaults.standard.string(forKey: "UserID") ?? "이름 없음"
+        return UserDefaults.standard.string(forKey: "UserID") ?? "UserID 없음"
+    }
+    
+    func setUserNickName(nickName: String) {
+        UserDefaults.standard.set(nickName, forKey: "NickName")
+    }
+    
+    func getUserNickName() -> String {
+        return UserDefaults.standard.string(forKey: "NickName") ?? "NickName 없음"
     }
 }

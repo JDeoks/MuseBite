@@ -26,7 +26,7 @@ class MyPageViewController: UIViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         saveButton.layer.cornerRadius = 8
         nickNameTextField.layer.cornerRadius = 8
-        nickNameTextField.text = LoginManager.shared.getUserID()
+        nickNameTextField.text = LoginManager.shared.getUserNickName()
     }
     
     @IBAction func closeButtonClicked(_ sender: Any) {
