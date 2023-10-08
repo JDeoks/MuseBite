@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EE42B2AD2933F00692E78 /* CommentModel.swift */; };
 		2A9ABDF62ACBE3D5008CFAFB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */; };
 		2A9ABDF82ACC2716008CFAFB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9ABDF72ACC2716008CFAFB /* UploadViewController.swift */; };
 		2AB611492ACC328500F03623 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB611482ACC328400F03623 /* DataManager.swift */; };
@@ -36,7 +37,7 @@
 		2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */; };
 		2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756932ACACA4F002CE496 /* MyPageViewController.swift */; };
 		2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756952ACACA59002CE496 /* LogInViewController.swift */; };
-		2AC756992ACACB5B002CE496 /* LogInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756982ACACB5B002CE496 /* LogInManager.swift */; };
+		2AC756992ACACB5B002CE496 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756982ACACB5B002CE496 /* LoginManager.swift */; };
 		2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */; };
 		2ADCB96E2AC2F309002FCB4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */; };
 		2ADCB9702AC2F309002FCB4C /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96F2AC2F309002FCB4C /* CommunityViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A4EE42B2AD2933F00692E78 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		2A9ABDF72ACC2716008CFAFB /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		2AB611482ACC328400F03623 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2AC756932ACACA4F002CE496 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		2AC756952ACACA59002CE496 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		2AC756982ACACB5B002CE496 /* LogInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInManager.swift; sourceTree = "<group>"; };
+		2AC756982ACACB5B002CE496 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		2ADCB9682AC2F309002FCB4C /* MuseBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				2AB611672AD1B66F00F03623 /* UserModel.swift */,
 				2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */,
+				2A4EE42B2AD2933F00692E78 /* CommentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,7 +117,7 @@
 		2AC756972ACACB21002CE496 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				2AC756982ACACB5B002CE496 /* LogInManager.swift */,
+				2AC756982ACACB5B002CE496 /* LoginManager.swift */,
 				2AB833552ACB3853000BC44E /* KakaoAuthManager.swift */,
 				2AB611482ACC328400F03623 /* DataManager.swift */,
 			);
@@ -286,10 +289,11 @@
 				2AB833652ACB5CCF000BC44E /* PostDetailViewController.swift in Sources */,
 				2ADCB9702AC2F309002FCB4C /* CommunityViewController.swift in Sources */,
 				2AB833562ACB3853000BC44E /* KakaoAuthManager.swift in Sources */,
-				2AC756992ACACB5B002CE496 /* LogInManager.swift in Sources */,
+				2AC756992ACACB5B002CE496 /* LoginManager.swift in Sources */,
 				2A9ABDF62ACBE3D5008CFAFB /* PostModel.swift in Sources */,
 				2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */,
 				2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */,
+				2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */,
 				2AB611682AD1B66F00F03623 /* UserModel.swift in Sources */,
 				2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */,
 				2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */,

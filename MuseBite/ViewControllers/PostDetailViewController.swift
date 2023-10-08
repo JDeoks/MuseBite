@@ -11,6 +11,8 @@ class PostDetailViewController: UIViewController {
     
     @IBOutlet var postDetailTableView: UITableView!
     
+    var post: PostModel? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
@@ -24,6 +26,11 @@ class PostDetailViewController: UIViewController {
         let commentsTableViewCell = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         postDetailTableView.register(commentsTableViewCell, forCellReuseIdentifier: "CommentsTableViewCell")
     }
+    
+    func setData(post: PostModel) {
+        self.post = post
+    }
+    
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -36,6 +43,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
         // 글 표시
         if indexPath.row == 0 {
             let cell = postDetailTableView.dequeueReusableCell(withIdentifier: "PostDetailTableViewCell") as! PostDetailTableViewCell
+            cell.setData(post: post!)
             //cell 선택시 선택효과 제거
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
@@ -46,9 +54,9 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
 }

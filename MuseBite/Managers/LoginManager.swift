@@ -1,5 +1,5 @@
 //
-//  LogInManager.swift
+//  LoginManager.swift
 //  MuseBite
 //
 //  Created by 서정덕 on 2023/10/02.

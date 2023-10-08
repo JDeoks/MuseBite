@@ -198,6 +198,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="createdTimeLabel" destination="05B-gw-V1R" id="eYX-0Q-IE3"/>
+                <outlet property="descLabel" destination="TWF-RE-rLd" id="awT-NM-wb6"/>
+                <outlet property="nickNameLabel" destination="Yq5-Es-hPw" id="3kr-wO-8Wj"/>
+                <outlet property="titleLabel" destination="w2y-Wo-Ssu" id="7h3-J2-HIX"/>
+            </connections>
             <point key="canvasLocation" x="329.00763358778624" y="205.98591549295776"/>
         </tableViewCell>
     </objects>

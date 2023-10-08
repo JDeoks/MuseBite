@@ -33,6 +33,6 @@ class PostTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         descLabel.text = data.desc
         creationTimeLabel.text = data.getCreateTimeStr()
-        writerLabel.text = data.writer
+        writerLabel.text = data.userID
     }
 }

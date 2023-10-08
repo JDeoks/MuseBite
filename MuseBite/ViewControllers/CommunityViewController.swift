@@ -103,6 +103,7 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ViewController - tableView(didSelectRowAt) indexPath = \(indexPath)")
         let postDetailVC = self.storyboard?.instantiateViewController(identifier: "PostDetailViewController") as! PostDetailViewController
+        postDetailVC.setData(post: DataManager.shared.postList[indexPath.row])
         postDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(postDetailVC, animated: true)
         // postTableView.deselectRow(at: indexPath, animated: true) // cell 선택후 기본 상태로 바로 돌아가기

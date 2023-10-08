@@ -1,8 +1,8 @@
 //
-//  PostModel.swift
+//  CommentModel.swift
 //  MuseBite
 //
-//  Created by 서정덕 on 2023/10/03.
+//  Created by 서정덕 on 2023/10/08.
 //
 
 import Foundation
@@ -10,20 +10,16 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
 
-class PostModel {
+class CommentModel {
 
-    var postID: String
-    var title: String
-    var desc: String
+    var commentID: String
+    var content: String
     var createdTime: Date
     var userID: String
-//    var audioURL: URL?
-//    var startTime: Int?
     
     init(document: QueryDocumentSnapshot) {
-        self.postID = document.documentID
-        self.title = document.data()["title"] as! String
-        self.desc = document.data()["desc"] as! String
+        self.commentID = document.documentID
+        self.content = document.data()["content"] as! String
         self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
         self.userID = document.data()["userID"] as? String ?? "userID 없음"
     }
