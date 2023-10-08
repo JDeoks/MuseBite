@@ -50,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		2A4EE42B2AD2933F00692E78 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		2A4EE42D2AD296A700692E78 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		2A4EE42E2AD296A700692E78 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		2A9ABDF72ACC2716008CFAFB /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		2AB611482ACC328400F03623 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -239,11 +241,12 @@
 			};
 			buildConfigurationList = 2ADCB9632AC2F309002FCB4C /* Build configuration list for PBXProject "MuseBite" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 2ADCB95F2AC2F309002FCB4C;
 			packageReferences = (
@@ -310,6 +313,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2ADCB9722AC2F309002FCB4C /* Base */,
+				2A4EE42D2AD296A700692E78 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -318,6 +322,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2ADCB9772AC2F30B002FCB4C /* Base */,
+				2A4EE42E2AD296A700692E78 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 			baseConfigurationReference = 2AB833532ACB2965000BC44E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -391,6 +397,7 @@
 			baseConfigurationReference = 2AB833532ACB2965000BC44E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

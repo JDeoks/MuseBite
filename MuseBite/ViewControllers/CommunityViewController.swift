@@ -10,6 +10,7 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
 import RxSwift
+import SwiftDate
 
 class CommunityViewController: UIViewController {
     let disposeBag = DisposeBag()
@@ -24,6 +25,8 @@ class CommunityViewController: UIViewController {
         initUI()
         bind()
         reloadData()
+        print(Locale.current.identifier)
+        print(TimeZone.current.identifier)
     }
     
     // 다크, 라이트 모드 변경시 호출되는 함수

@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "커뮤니티"; ObjectID = "82d-gq-fLg"; */
+"82d-gq-fLg.text" = "커뮤니티";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "APU-7P-Ju2"; */
+"APU-7P-Ju2.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Kakao로 로그인"; ObjectID = "Hzq-7H-F0x"; */
+"Hzq-7H-F0x.normalTitle" = "Kakao로 로그인";
+
+/* Class = "UILabel"; text = "로그인하고 나의 음악을 자랑해보세요 :)"; ObjectID = "IPi-yE-4Pz"; */
+"IPi-yE-4Pz.text" = "로그인하고 나의 음악을 자랑해보세요 :)";
+
+/* Class = "UITextField"; text = "으엉입니다"; ObjectID = "Jzh-xd-4Tp"; */
+"Jzh-xd-4Tp.text" = "으엉입니다";
+
+/* Class = "UIButton"; normalTitle = "Apple로 로그인"; ObjectID = "MbF-Cc-0I7"; */
+"MbF-Cc-0I7.normalTitle" = "Apple로 로그인";
+
+/* Class = "UITextField"; placeholder = "댓글을 입력하세요"; ObjectID = "Onk-1W-z2K"; */
+"Onk-1W-z2K.placeholder" = "댓글을 입력하세요";
+
+/* Class = "UILabel"; text = "글 쓰기"; ObjectID = "VpL-Nf-lcc"; */
+"VpL-Nf-lcc.text" = "글 쓰기";
+
+/* Class = "UILabel"; text = "글 상세"; ObjectID = "XwG-nS-SW3"; */
+"XwG-nS-SW3.text" = "글 상세";
+
+/* Class = "UIButton"; normalTitle = "완료"; ObjectID = "ZrB-bC-0A5"; */
+"ZrB-bC-0A5.normalTitle" = "완료";
+
+/* Class = "UIButton"; normalTitle = "수정"; ObjectID = "a0v-qP-lMH"; */
+"a0v-qP-lMH.normalTitle" = "수정";
+
+/* Class = "UILabel"; text = "내 정보"; ObjectID = "b9d-VO-WXU"; */
+"b9d-VO-WXU.text" = "내 정보";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "dan-1F-vVQ"; */
+"dan-1F-vVQ.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "회원탈퇴"; ObjectID = "eB2-rI-bRX"; */
+"eB2-rI-bRX.normalTitle" = "회원탈퇴";
+
+/* Class = "UILabel"; text = " 닉네임"; ObjectID = "gLw-YV-NtS"; */
+"gLw-YV-NtS.text" = " 닉네임";
+
+/* Class = "UITabBarItem"; title = "내 정보"; ObjectID = "ha4-a1-d8R"; */
+"ha4-a1-d8R.title" = "내 정보";
+
+/* Class = "UIButton"; normalTitle = "Google로 로그인"; ObjectID = "kXo-m5-8w8"; */
+"kXo-m5-8w8.normalTitle" = "Google로 로그인";
+
+/* Class = "UIButton"; normalTitle = "로그아웃"; ObjectID = "n2g-Bi-NzF"; */
+"n2g-Bi-NzF.normalTitle" = "로그아웃";
+
+/* Class = "UITabBarItem"; title = "커뮤니티"; ObjectID = "plM-Le-9A3"; */
+"plM-Le-9A3.title" = "커뮤니티";
+
+/* Class = "UILabel"; text = "로그인"; ObjectID = "w5J-OM-Jb0"; */
+"w5J-OM-Jb0.text" = "로그인";
+
+/* Class = "UITextField"; placeholder = "제목을 입력하세요"; ObjectID = "z9y-cv-R82"; */
+"z9y-cv-R82.placeholder" = "제목을 입력하세요";

@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import SwiftDate
 
 class PostModel {
 
@@ -24,12 +25,13 @@ class PostModel {
         self.postID = document.documentID
         self.title = document.data()["title"] as! String
         self.desc = document.data()["desc"] as! String
+        print((document.data()["createdTime"] as! Timestamp).dateValue())
         self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
         self.userID = document.data()["userID"] as? String ?? "userID 없음"
     }
     
     func getCreateTimeStr() -> String {
-        // TODO
-        return "10:05"
+        let region = Region(calendar: Calendars.gregorian, zone: Zones.asiaSeoul, locale: Locales.korean)
+        return DateInRegion(self.createdTime, region: region).toFormat("yyyy-MM-dd HH:mm")
     }
 }
