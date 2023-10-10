@@ -28,6 +28,8 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func closeButtonClicked(_ sender: Any) {
+        guard let newNickName = nickNameTextField.text else { return }
+        LoginManager.shared.setUserNickName(newNickName)
         self.dismiss(animated: true)
     }
     

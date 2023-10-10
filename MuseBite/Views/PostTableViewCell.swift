@@ -21,12 +21,10 @@ class PostTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        setData(data: post)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func setData(data: PostModel) {
@@ -35,4 +33,5 @@ class PostTableViewCell: UITableViewCell {
         creationTimeLabel.text = data.getCreateTimeStr()
         userNickNameLabel.text = data.userNickName
     }
+    
 }

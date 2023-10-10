@@ -31,6 +31,10 @@ class PostDetailViewController: UIViewController {
         self.post = post
     }
     
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {

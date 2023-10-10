@@ -42,7 +42,7 @@ class UploadViewController: UIViewController {
     }
 
     @IBAction func closeButtonClicked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
