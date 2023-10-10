@@ -13,7 +13,7 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
-    @IBOutlet var writerLabel: UILabel!
+    @IBOutlet var userNickNameLabel: UILabel!
     @IBOutlet var creationTimeLabel: UILabel!
     @IBOutlet var likeCountLabel: UILabel!
     @IBOutlet var dislikeCountLabel: UILabel!
@@ -33,6 +33,6 @@ class PostTableViewCell: UITableViewCell {
         titleLabel.text = data.title
         descLabel.text = data.desc
         creationTimeLabel.text = data.getCreateTimeStr()
-        writerLabel.text = data.userID
+        userNickNameLabel.text = data.userNickName
     }
 }

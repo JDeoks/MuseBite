@@ -28,8 +28,8 @@ class UploadViewController: UIViewController {
             "title": titleTextField.text ?? "",
             "desc": descTextField.text ?? "",
             "createdTime": Timestamp(date: Date()),
-            // TODO: - writer 추가
-            "userID": LoginManager.shared.getUserID()
+            "userID": LoginManager.shared.getUserID(),
+            "userNickName": LoginManager.shared.getUserNickName()
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

@@ -80,7 +80,7 @@ class LoginManager {
     func signUp(oauthID: String) {
         print("LoginManager - signUpWithOAuthID(oauthID:)")
         // TODO: - 회원가입시에 카카오 유저 정보 받아와서 닉네임에 적용 필요
-        let nickName = String(oauthID.prefix(15))
+        let nickName = oauthID
         var ref: DocumentReference? = nil
         ref = userCollection.addDocument(data: [
             "createdTime": Timestamp(date: Date()),

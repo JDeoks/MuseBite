@@ -10,9 +10,7 @@ import UIKit
 class MyPageViewController: UIViewController {
     
     var user: UserModel? = nil
-    
-    lazy var kakaoAuthVM: KakaoAuthManager = { KakaoAuthManager() }()
-    
+        
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var nickNameTextField: UITextField!
@@ -34,8 +32,13 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func logoutButtonClicked(_ sender: Any) {
-        kakaoAuthVM.KakaoLogout()
+        KakaoAuthManager.shared.KakaoLogout()
         self.dismiss(animated: true)
     }
 
+    @IBAction func unLinkButttonClicked(_ sender: Any) {
+        // 닉네임을 입력해주세요
+        KakaoAuthManager.shared.kakaoUnLink()
+    }
+    
 }

@@ -8,8 +8,6 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    
-    lazy var kakaoAuthManager: KakaoAuthManager = { KakaoAuthManager() }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +19,7 @@ class LogInViewController: UIViewController {
     }
 
     @IBAction func kakaoLoginButtonClicked(_ sender: Any) {
-        kakaoAuthManager.handleKakaoLogin()
+        KakaoAuthManager.shared.handleKakaoLogin()
         self.dismiss(animated: true)
     }
 }

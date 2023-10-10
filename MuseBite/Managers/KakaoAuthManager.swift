@@ -12,11 +12,11 @@ import KakaoSDKUser
 
 class KakaoAuthManager: ObservableObject {
     
-    var subscriptions = Set<AnyCancellable>()
+    static let shared = KakaoAuthManager()
     
-    init() {
-        print("KakaoAuthManager - init()")
-    }
+    private init() { }
+
+    var subscriptions = Set<AnyCancellable>()
     
     func handleKakaoLogin() {
         print("KakaoAuthManager - handleKakaoLogin()")
@@ -25,7 +25,6 @@ class KakaoAuthManager: ObservableObject {
             kakaoLoginWithApp()
         } else {
             // TODO: 웹로그인 기능도 추가해야함
-            // 카카오톡 설치 X -> 웹으로 로그인
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
                     print(error)
@@ -33,9 +32,7 @@ class KakaoAuthManager: ObservableObject {
                 else {
                     print("loginWithKakaoAccount() success.")
                     LoginManager.shared.setLoginStatus(true)
-                    //do something
                     _ = oauthToken
-                    print("kakao_\(String(describing: oauthToken!.idToken))")
                 }
             }
         }
@@ -54,7 +51,20 @@ class KakaoAuthManager: ObservableObject {
             }
         }
     }
-        
+    
+    func getUserOAuthID() {
+        print("KakaoAuthVm - getUserOAuthID()")
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("OAuthID = kakao_\(String(describing: user!.id))")
+                return LoginManager.shared.setUserByOAuthID(oauthID: "kakao_\(String(describing: user!.id!))")
+            }
+        }
+    }
+    
     func KakaoLogout() {
         print("KakaoAuthVm - KakaoLogout()")
         UserApi.shared.logout {(error) in
@@ -67,16 +77,14 @@ class KakaoAuthManager: ObservableObject {
             }
         }
     }
-    
-    func getUserOAuthID() {
-        print("KakaoAuthVm - getUserOAuthID()")
-        UserApi.shared.me() {(user, error) in
+
+    func kakaoUnLink(){
+        UserApi.shared.unlink {(error) in
             if let error = error {
                 print(error)
             }
             else {
-                print("OAuthID = kakao_\(String(describing: user!.id))")
-                return LoginManager.shared.setUserByOAuthID(oauthID: "kakao_\(String(describing: user!.id!))")
+                print("unlink() success.")
             }
         }
     }
