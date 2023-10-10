@@ -94,6 +94,7 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
+        // postList 비어있지 않을 때 cell에 데이터 넘겨줌
         if indexPath.row < DataManager.shared.postList.count {
             let post = DataManager.shared.postList[indexPath.row]
             cell.setData(data: post)

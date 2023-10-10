@@ -105,7 +105,7 @@ class LoginManager {
         self.setUserID(userDoc.documentID)
         self.setLoginStatus(true)
         self.setOAuthID(userDoc.data()["oauthID"] as! String)
-        self.setUserNickName(userDoc.data()["nickname"] as! String)
+        self.setUserNickName(userDoc.data()["nickName"] as! String)
     }
     
 }

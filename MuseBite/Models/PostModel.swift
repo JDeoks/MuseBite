@@ -25,7 +25,6 @@ class PostModel {
         self.postID = document.documentID
         self.title = document.data()["title"] as! String
         self.desc = document.data()["desc"] as! String
-        print((document.data()["createdTime"] as! Timestamp).dateValue())
         self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
         self.userID = document.data()["userID"] as? String ?? "userID 없음"
     }

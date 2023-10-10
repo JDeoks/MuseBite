@@ -22,12 +22,14 @@ class UploadViewController: UIViewController {
     func uploadPost() {
         let db = Firestore.firestore()
         var ref: DocumentReference? = nil
+        // TODO: 디버그용
+        print("userID : \(LoginManager.shared.getUserID())")
         ref = db.collection("post").addDocument(data: [
             "title": titleTextField.text ?? "",
             "desc": descTextField.text ?? "",
             "createdTime": Timestamp(date: Date()),
             // TODO: - writer 추가
-            "writer": ""
+            "userID": LoginManager.shared.getUserID()
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -40,7 +42,7 @@ class UploadViewController: UIViewController {
     }
 
     @IBAction func closeButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {

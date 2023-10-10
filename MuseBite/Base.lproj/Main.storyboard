@@ -141,6 +141,9 @@
                                         <state key="normal" image="chevron.backward" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                         </state>
+                                        <connections>
+                                            <action selector="closeButtonClicked:" destination="ZK5-E7-maE" eventType="touchUpInside" id="Pj6-pK-Tx2"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dav-d0-vJV">
                                         <rect key="frame" x="56" y="0.0" width="334" height="56"/>

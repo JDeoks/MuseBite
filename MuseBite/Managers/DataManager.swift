@@ -64,5 +64,5 @@ class DataManager {
     func fetchCommentsData() {
         
     }
-    
+
 }
