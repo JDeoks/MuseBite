@@ -14,7 +14,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var userNickNameLabel: UILabel!
-    @IBOutlet var creationTimeLabel: UILabel!
+    @IBOutlet var createdTimeLabel: UILabel!
     @IBOutlet var likeCountLabel: UILabel!
     @IBOutlet var dislikeCountLabel: UILabel!
     @IBOutlet var commentCountLabel: UILabel!
@@ -30,7 +30,7 @@ class PostTableViewCell: UITableViewCell {
     func setData(data: PostModel) {
         titleLabel.text = data.title
         descLabel.text = data.desc
-        creationTimeLabel.text = data.getCreateTimeStr()
+        createdTimeLabel.text = data.getCreateTimeStr()
         userNickNameLabel.text = data.userNickName
     }
     

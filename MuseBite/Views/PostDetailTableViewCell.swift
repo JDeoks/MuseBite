@@ -26,7 +26,7 @@ class PostDetailTableViewCell: UITableViewCell {
     
     func setData(post: PostModel) {
         titleLabel.text = post.title
-        nickNameLabel.text = post.userID
+        nickNameLabel.text = post.userNickName
         createdTimeLabel.text = post.getCreateTimeStr()
         descLabel.text = post.desc
     }

@@ -22,13 +22,13 @@ class PostModel {
 //    var audioURL: URL?
 //    var startTime: Int?
     
-    init(document: QueryDocumentSnapshot) {
+    init(document: DocumentSnapshot) {
         self.postID = document.documentID
-        self.title = document.data()["title"] as! String
-        self.desc = document.data()["desc"] as! String
-        self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
-        self.userID = document.data()["userID"] as? String ?? "userID 없음"
-        self.userNickName = document.data()["userNickName"] as? String ?? "닉네임 없음"
+        self.title = document.data()!["title"] as! String
+        self.desc = document.data()!["desc"] as! String
+        self.createdTime = (document.data()!["createdTime"] as! Timestamp).dateValue()
+        self.userID = document.data()!["userID"] as? String ?? "userID 없음"
+        self.userNickName = document.data()!["userNickName"] as? String ?? "닉네임 없음"
     }
     
     func getCreateTimeStr() -> String {

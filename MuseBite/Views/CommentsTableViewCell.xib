@@ -33,7 +33,7 @@
                                                 <color key="textColor" name="IconGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsH-Yf-O8Q">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsH-Yf-O8Q" userLabel=" ">
                                                 <rect key="frame" x="43" y="0.0" width="4" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" name="IconGray"/>
@@ -78,6 +78,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="contentLabel" destination="dL7-8f-eX4" id="Bbr-pl-fDw"/>
+                <outlet property="createdTimeLabel" destination="qp6-bc-hvo" id="SVc-mm-ToS"/>
+                <outlet property="userNickNameLabel" destination="1tq-PN-BGi" id="Lvz-zd-gth"/>
+            </connections>
             <point key="canvasLocation" x="328.24427480916029" y="50"/>
         </tableViewCell>
     </objects>

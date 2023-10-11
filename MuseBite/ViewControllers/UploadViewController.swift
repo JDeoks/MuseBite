@@ -11,20 +11,21 @@ import FirebaseFirestore
 import FirebaseAnalytics
 
 class UploadViewController: UIViewController {
+    
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var descTextField: UITextView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     func uploadPost() {
-        let db = Firestore.firestore()
+        let postCollection = Firestore.firestore().collection("post")
         var ref: DocumentReference? = nil
         // TODO: 디버그용
         print("userID : \(LoginManager.shared.getUserID())")
-        ref = db.collection("post").addDocument(data: [
+        ref = postCollection.addDocument(data: [
             "title": titleTextField.text ?? "",
             "desc": descTextField.text ?? "",
             "createdTime": Timestamp(date: Date()),
@@ -46,6 +47,10 @@ class UploadViewController: UIViewController {
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
+        if titleTextField.text == "" {
+            // TODO:  제목을 입력하세요
+            return
+        }
         uploadPost()
     }
 }

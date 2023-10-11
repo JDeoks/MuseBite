@@ -190,7 +190,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="commentCountLabel" destination="22j-up-G2N" id="S25-9J-QaC"/>
-                <outlet property="creationTimeLabel" destination="jrW-wg-tnk" id="xwR-Ph-CaB"/>
+                <outlet property="createdTimeLabel" destination="jrW-wg-tnk" id="xwR-Ph-CaB"/>
                 <outlet property="descLabel" destination="o4D-TL-yhd" id="Qa1-OQ-Wdj"/>
                 <outlet property="dislikeCountLabel" destination="h4M-Qk-k34" id="He1-Ni-T9r"/>
                 <outlet property="likeCountLabel" destination="4HL-bt-Tx7" id="ejE-KH-W6x"/>

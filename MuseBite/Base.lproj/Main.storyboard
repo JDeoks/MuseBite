@@ -168,18 +168,18 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xVE-S2-vqa">
-                                <rect key="frame" x="0.0" y="103" width="390" height="651"/>
+                                <rect key="frame" x="0.0" y="103" width="390" height="401"/>
                                 <color key="backgroundColor" name="PostTableViewWB"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-Dc-7Pa">
-                                <rect key="frame" x="0.0" y="753" width="390" height="1"/>
+                                <rect key="frame" x="0.0" y="503" width="390" height="1"/>
                                 <color key="backgroundColor" name="TitleSeparGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Vq7-20-L4p"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z05-jr-2m7">
-                                <rect key="frame" x="0.0" y="754" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="504" width="390" height="56"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-1W-z2K">
                                         <rect key="frame" x="24" y="0.0" width="298" height="56"/>
@@ -199,6 +199,9 @@
                                         <state key="normal" image="paperplane" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
                                         </state>
+                                        <connections>
+                                            <action selector="uplaodCommentButtonClicked:" destination="pNw-Pw-aht" eventType="touchUpInside" id="9Dj-FL-noM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="12"/>
@@ -207,7 +210,7 @@
                         <viewLayoutGuide key="safeArea" id="ziu-Iq-M0e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="z05-jr-2m7" firstAttribute="bottom" secondItem="ziu-Iq-M0e" secondAttribute="bottom" id="ALJ-aR-ab7"/>
+                            <constraint firstItem="z05-jr-2m7" firstAttribute="bottom" secondItem="ziu-Iq-M0e" secondAttribute="bottom" constant="-250" id="ALJ-aR-ab7"/>
                             <constraint firstItem="xVE-S2-vqa" firstAttribute="leading" secondItem="ziu-Iq-M0e" secondAttribute="leading" id="Bs1-8q-S7V"/>
                             <constraint firstItem="J1S-du-TcE" firstAttribute="bottom" secondItem="HM2-3k-iza" secondAttribute="bottom" id="IWl-KB-7qZ"/>
                             <constraint firstItem="mW5-Dc-7Pa" firstAttribute="leading" secondItem="z05-jr-2m7" secondAttribute="leading" id="L1U-Tx-hBR"/>
@@ -228,6 +231,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="Onk-1W-z2K" id="l4P-YB-arC"/>
                         <outlet property="postDetailTableView" destination="xVE-S2-vqa" id="aeb-ZY-TxH"/>
                     </connections>
                 </viewController>
@@ -454,6 +458,15 @@
                                 <color key="textColor" name="TextWB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gLV-L8-1TN">
+                                <rect key="frame" x="131" y="128" width="128" height="126.66666666666669"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="IconGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3PI-jY-DW9"/>
+                                    <constraint firstAttribute="width" constant="128" id="YyL-QQ-OPW"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-IP-7CN">
                                 <rect key="frame" x="0.0" y="47" width="390" height="56"/>
                                 <subviews>
@@ -582,15 +595,6 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gLV-L8-1TN">
-                                <rect key="frame" x="131" y="128" width="128" height="126.66666666666669"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="IconGray"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="3PI-jY-DW9"/>
-                                    <constraint firstAttribute="width" constant="128" id="YyL-QQ-OPW"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="73O-1P-X8s"/>
                         <color key="backgroundColor" name="BackGroundWB"/>

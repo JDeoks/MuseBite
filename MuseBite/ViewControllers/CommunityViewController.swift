@@ -89,14 +89,14 @@ class CommunityViewController: UIViewController {
 extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.shared.postList.count
+        return DataManager.shared.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = postTableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as! PostTableViewCell
         // postList 비어있지 않을 때 cell에 데이터 넘겨줌
-        if indexPath.row < DataManager.shared.postList.count {
-            let post = DataManager.shared.postList[indexPath.row]
+        if indexPath.row < DataManager.shared.posts.count {
+            let post = DataManager.shared.posts[indexPath.row]
             cell.setData(data: post)
         }
         //cell 선택시 선택효과 제거
@@ -107,7 +107,7 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ViewController - tableView(didSelectRowAt) indexPath = \(indexPath)")
         let postDetailVC = self.storyboard?.instantiateViewController(identifier: "PostDetailViewController") as! PostDetailViewController
-        postDetailVC.setData(post: DataManager.shared.postList[indexPath.row])
+        postDetailVC.setData(post: DataManager.shared.posts[indexPath.row])
         postDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(postDetailVC, animated: true)
         // postTableView.deselectRow(at: indexPath, animated: true) // cell 선택후 기본 상태로 바로 돌아가기

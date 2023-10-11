@@ -16,13 +16,14 @@ class DataManager {
     static let shared = DataManager()
     private init() { }
     
-    var postList: [PostModel] = []
+    var posts: [PostModel] = []
     
     ///fetchRecentPostData 성공여부 플래그
     let fetchDataDone = PublishSubject<Void>()
     
     func fetchRecentPostData() {
         print("CommunityViewController - fetchRecentPostData()")
+        
         // Firestore 콜렉션 초기화
         let postCollection = Firestore.firestore().collection("post").order(by: "createdTime", descending: true)
         // 콜렉션의 도큐먼트들을 가져와서 배열에 저장
@@ -37,11 +38,11 @@ class DataManager {
                 print("No documents found.")
                 return
             }
-            self.postList.removeAll()
+            self.posts.removeAll()
             // 배열에 있는 각 도큐먼트에 접근
             for document in documents {
                 let post = PostModel(document: document)
-                self.postList.append(post)
+                self.posts.append(post)
             }
             fetchDataDone.onNext(())
         }
