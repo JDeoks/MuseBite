@@ -72,8 +72,8 @@ class PostDetailViewController: UIViewController {
     
     func fetchRecentCommentData() {
         print("PostDetailViewController - fetchRecentCommentData()")
-        let commentCollection = Firestore.firestore().collection("comment").order(by: "createdTime", descending: true)
-        commentCollection.getDocuments { querySnapshot, error in
+        let commentQuery = Firestore.firestore().collection("comment").whereField("postID", isEqualTo: postID).order(by: "createdTime", descending: false)
+        commentQuery.getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
                 // 에러 처리: 사용자에게 메시지 표시 또는 기록
