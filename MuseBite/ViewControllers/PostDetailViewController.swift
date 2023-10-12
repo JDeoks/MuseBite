@@ -15,10 +15,11 @@ class PostDetailViewController: UIViewController {
     @IBOutlet var postDetailTableView: UITableView!
     @IBOutlet var commentTextField: UITextField!
     
-    
     var postID: String = ""
     var postData: PostModel? = nil
-    var comments:[CommentModel] = []
+    var comments: [CommentModel] = []
+    
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,17 @@ class PostDetailViewController: UIViewController {
     }
     
     func initUI() {
+        // postDetailTableView
         postDetailTableView.delegate = self
         postDetailTableView.dataSource = self
         let postDetailTableViewCell = UINib(nibName: "PostDetailTableViewCell", bundle: nil)
         postDetailTableView.register(postDetailTableViewCell, forCellReuseIdentifier: "PostDetailTableViewCell")
         let commentsTableViewCell = UINib(nibName: "CommentsTableViewCell", bundle: nil)
         postDetailTableView.register(commentsTableViewCell, forCellReuseIdentifier: "CommentsTableViewCell")
+        postDetailTableView.refreshControl = refreshControl
+        // refreshControl
+        refreshControl.tintColor = .gray
+        refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -40,11 +46,20 @@ class PostDetailViewController: UIViewController {
     }
         
     @IBAction func uplaodCommentButtonClicked(_ sender: Any) {
-        let comment = commentTextField.text!
-        if comment == "" {
+        if LoginManager.shared.getLoginStatus() == false {
+            showLoginRequiredAlert()
             return
         }
-        uploadComment(comment: comment)
+        if let comment = commentTextField.text {
+            if comment == "" { return }
+            uploadComment(comment: comment)
+        }
+        commentTextField.text = ""
+    }
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        reloadPage()
+        refreshControl.endRefreshing()
     }
     
     func setData(post: PostModel) {
@@ -110,6 +125,19 @@ class PostDetailViewController: UIViewController {
             }
         }
         
+    }
+    
+    func showLoginRequiredAlert () {
+        let sheet = UIAlertController(title: "로그인 후 이용 가능한 서비스입니다.", message: "로그인으로 더 많은 서비스 사용해보세요.", preferredStyle: .alert)
+        sheet.addAction(UIAlertAction(title: "로그인", style: .default, handler: { _ in
+            print("yes 클릭")
+            let LogInVC = self.storyboard?.instantiateViewController(identifier: "LogInViewController") as! LogInViewController
+            LogInVC.modalPresentationStyle = .overFullScreen
+            self.present(LogInVC, animated: true)
+            return
+        }))
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel ))
+        present(sheet, animated: true)
     }
     
 }

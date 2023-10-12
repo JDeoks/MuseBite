@@ -15,9 +15,7 @@ import SwiftDate
 class CommunityViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    
 
-    
     @IBOutlet var postTableView: UITableView!
     @IBOutlet var writePostButton: UIButton!
     
