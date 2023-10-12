@@ -13,7 +13,10 @@ import RxSwift
 import SwiftDate
 
 class CommunityViewController: UIViewController {
+    
     let disposeBag = DisposeBag()
+    
+
     
     @IBOutlet var postTableView: UITableView!
     @IBOutlet var writePostButton: UIButton!
@@ -65,6 +68,17 @@ class CommunityViewController: UIViewController {
         }
     }
     
+    @IBAction func uploadButtonClicked(_ sender: Any) {
+        if LoginManager.shared.getLoginStatus() == false {
+            showLoginRequiredAlert()
+            return
+        }
+        let uploadVC = self.storyboard?.instantiateViewController(identifier: "UploadViewController") as! UploadViewController
+        uploadVC.hidesBottomBarWhenPushed = true
+        uploadVC.modalPresentationStyle = .overFullScreen
+        self.present(uploadVC, animated: true)
+    }
+    
     func bind() {
         DataManager.shared.fetchDataDone
             .subscribe(onNext: { _ in
@@ -76,12 +90,18 @@ class CommunityViewController: UIViewController {
     func reloadData() {
         DataManager.shared.fetchRecentPostData()
     }
-    
-    @IBAction func uploadButtonClicked(_ sender: Any) {
-        let uploadVC = self.storyboard?.instantiateViewController(identifier: "UploadViewController") as! UploadViewController
-        uploadVC.hidesBottomBarWhenPushed = true
-        uploadVC.modalPresentationStyle = .overFullScreen
-        self.present(uploadVC, animated: true)
+
+    func showLoginRequiredAlert () {
+        let sheet = UIAlertController(title: "로그인 후 이용 가능한 서비스입니다.", message: "로그인으로 더 많은 서비스 사용해보세요.", preferredStyle: .alert)
+        sheet.addAction(UIAlertAction(title: "로그인", style: .default, handler: { _ in
+            print("yes 클릭")
+            let LogInVC = self.storyboard?.instantiateViewController(identifier: "LogInViewController") as! LogInViewController
+            LogInVC.modalPresentationStyle = .overFullScreen
+            self.present(LogInVC, animated: true)
+            return
+        }))
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel ))
+        present(sheet, animated: true)
     }
     
 }
