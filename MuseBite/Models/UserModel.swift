@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import SwiftDate
 
 class UserModel {
     
@@ -26,7 +27,7 @@ class UserModel {
     }
     
     func getCreateTimeStr() -> String {
-        // TODO: - swiftDate
-        return "10:05"
+        let region = Region(calendar: Calendars.gregorian, zone: Zones.asiaSeoul, locale: Locales.korean)
+        return DateInRegion(self.createdTime, region: region).toFormat("yyyy-MM-dd HH:mm")
     }
 }

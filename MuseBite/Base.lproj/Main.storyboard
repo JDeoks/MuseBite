@@ -428,6 +428,69 @@
             </objects>
             <point key="canvasLocation" x="3424.6153846153843" y="4.9763033175355451"/>
         </scene>
+        <!--Notification View Controller-->
+        <scene sceneID="vxY-3x-sVd">
+            <objects>
+                <viewController storyboardIdentifier="NotificationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HpQ-wF-PI1" customClass="NotificationViewController" customModule="MuseBite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Imh-3b-mob">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjz-qJ-SCg">
+                                <rect key="frame" x="0.0" y="91" width="390" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLB-fL-hFh">
+                                        <rect key="frame" x="23.999999999999996" y="0.0" width="48.666666666666657" height="56"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <color key="textColor" name="TextWB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86M-uu-6sM">
+                                        <rect key="frame" x="72.666666666666657" y="0.0" width="293.33333333333337" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="qLZ-ju-HK7"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="24"/>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APG-BZ-khU">
+                                <rect key="frame" x="0.0" y="147" width="390" height="1"/>
+                                <color key="backgroundColor" name="TitleSeparGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="NAI-Ps-AZG"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-TU-2Ip">
+                                <rect key="frame" x="0.0" y="148" width="390" height="613"/>
+                                <color key="backgroundColor" name="PostTableViewWB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="17C-Ma-ZAg"/>
+                        <color key="backgroundColor" name="BackGroundWB"/>
+                        <constraints>
+                            <constraint firstItem="17C-Ma-ZAg" firstAttribute="trailing" secondItem="4Zj-TU-2Ip" secondAttribute="trailing" id="5lo-b3-IZx"/>
+                            <constraint firstItem="4Zj-TU-2Ip" firstAttribute="leading" secondItem="17C-Ma-ZAg" secondAttribute="leading" id="7fh-C7-GzX"/>
+                            <constraint firstItem="APG-BZ-khU" firstAttribute="top" secondItem="rjz-qJ-SCg" secondAttribute="bottom" id="OYg-Ph-k9c"/>
+                            <constraint firstItem="rjz-qJ-SCg" firstAttribute="trailing" secondItem="17C-Ma-ZAg" secondAttribute="trailing" id="Tou-5Q-dfJ"/>
+                            <constraint firstItem="17C-Ma-ZAg" firstAttribute="bottom" secondItem="4Zj-TU-2Ip" secondAttribute="bottom" id="VSe-Ff-DIh"/>
+                            <constraint firstItem="4Zj-TU-2Ip" firstAttribute="top" secondItem="APG-BZ-khU" secondAttribute="bottom" id="Xaq-Zp-49V"/>
+                            <constraint firstItem="rjz-qJ-SCg" firstAttribute="leading" secondItem="17C-Ma-ZAg" secondAttribute="leading" id="ZOq-xn-Ayk"/>
+                            <constraint firstItem="APG-BZ-khU" firstAttribute="leading" secondItem="17C-Ma-ZAg" secondAttribute="leading" id="jJm-Ac-1oF"/>
+                            <constraint firstItem="APG-BZ-khU" firstAttribute="trailing" secondItem="17C-Ma-ZAg" secondAttribute="trailing" id="nWH-n1-UaX"/>
+                            <constraint firstItem="rjz-qJ-SCg" firstAttribute="top" secondItem="17C-Ma-ZAg" secondAttribute="top" id="pVw-pw-b2f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="l9N-5o-4HT"/>
+                    <connections>
+                        <outlet property="notificationTableView" destination="4Zj-TU-2Ip" id="3Dl-fp-jti"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j1W-3C-yod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="659.71563981042652"/>
+        </scene>
         <!--내 정보-->
         <scene sceneID="ZHk-5d-fNO">
             <objects>
@@ -442,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIe-9p-cCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="741"/>
+            <point key="canvasLocation" x="1051" y="1354"/>
         </scene>
         <!--Item-->
         <scene sceneID="cda-5h-t0v">
@@ -621,7 +684,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kT-Ba-CK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993.8461538461538" y="740.75829383886253"/>
+            <point key="canvasLocation" x="1995" y="1354"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="Lan-xb-Kfr">
@@ -752,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQo-uq-O9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2683.0769230769229" y="741.46919431279616"/>
+            <point key="canvasLocation" x="2722" y="1354"/>
         </scene>
         <!--Nick Name Setting View Controller-->
         <scene sceneID="HPA-ZC-ZJV">
@@ -854,7 +917,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCC-0k-0jL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3425" y="741"/>
+            <point key="canvasLocation" x="3425" y="1354"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="Ng5-8c-hsZ">
@@ -868,6 +931,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="S6k-q8-8gA" kind="relationship" relationship="viewControllers" id="OXL-aV-OZo"/>
+                        <segue destination="chp-1e-Dec" kind="relationship" relationship="viewControllers" id="Feh-D5-6n8"/>
                         <segue destination="Jja-vY-0vi" kind="relationship" relationship="viewControllers" id="l99-Ij-OZg"/>
                     </connections>
                 </tabBarController>
@@ -896,8 +960,28 @@
             </objects>
             <point key="canvasLocation" x="1066.1538461538462" y="4.9763033175355451"/>
         </scene>
+        <!--알림-->
+        <scene sceneID="sjb-vY-OdD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="chp-1e-Dec" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="알림" image="bell.fill" catalog="system" selectedImage="bell.fill" id="c9t-S5-LyT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Is-EF-ZTC">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HpQ-wF-PI1" kind="relationship" relationship="rootViewController" id="6h6-A1-Die"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogD-yI-FOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7692307692307" y="659.71563981042652"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bell.fill" catalog="system" width="123" height="128"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>

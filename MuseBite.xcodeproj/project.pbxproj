@@ -39,6 +39,12 @@
 		2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756932ACACA4F002CE496 /* MyPageViewController.swift */; };
 		2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756952ACACA59002CE496 /* LogInViewController.swift */; };
 		2AC756992ACACB5B002CE496 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756982ACACB5B002CE496 /* LoginManager.swift */; };
+		2ACEFAB52AD9B15D00A8B942 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFAB42AD9B15D00A8B942 /* NotificationViewController.swift */; };
+		2ACEFAB82AD9B1A400A8B942 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFAB62AD9B1A400A8B942 /* NotificationTableViewCell.swift */; };
+		2ACEFAB92AD9B1A400A8B942 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACEFAB72AD9B1A400A8B942 /* NotificationTableViewCell.xib */; };
+		2ACEFABC2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFABA2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift */; };
+		2ACEFABD2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACEFABB2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib */; };
+		2ACEFABF2AD9B69A00A8B942 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFABE2AD9B69A00A8B942 /* NotificationModel.swift */; };
 		2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */; };
 		2ADCB96E2AC2F309002FCB4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */; };
 		2ADCB9702AC2F309002FCB4C /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96F2AC2F309002FCB4C /* CommunityViewController.swift */; };
@@ -70,6 +76,12 @@
 		2AC756932ACACA4F002CE496 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		2AC756952ACACA59002CE496 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		2AC756982ACACB5B002CE496 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		2ACEFAB42AD9B15D00A8B942 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		2ACEFAB62AD9B1A400A8B942 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		2ACEFAB72AD9B1A400A8B942 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		2ACEFABA2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNonLoginTableViewCell.swift; sourceTree = "<group>"; };
+		2ACEFABB2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationNonLoginTableViewCell.xib; sourceTree = "<group>"; };
+		2ACEFABE2AD9B69A00A8B942 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		2ADCB9682AC2F309002FCB4C /* MuseBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +126,7 @@
 				2AB611672AD1B66F00F03623 /* UserModel.swift */,
 				2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */,
 				2A4EE42B2AD2933F00692E78 /* CommentModel.swift */,
+				2ACEFABE2AD9B69A00A8B942 /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +186,7 @@
 				2AC756952ACACA59002CE496 /* LogInViewController.swift */,
 				2A9ABDF72ACC2716008CFAFB /* UploadViewController.swift */,
 				2A6ECA272AD5B82E0010F573 /* NickNameSettingViewController.swift */,
+				2ACEFAB42AD9B15D00A8B942 /* NotificationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +200,10 @@
 				2AB8335D2ACB591D000BC44E /* PostDetailTableViewCell.xib */,
 				2AB833602ACB5A1E000BC44E /* CommentsTableViewCell.swift */,
 				2AB833612ACB5A1F000BC44E /* CommentsTableViewCell.xib */,
+				2ACEFAB62AD9B1A400A8B942 /* NotificationTableViewCell.swift */,
+				2ACEFAB72AD9B1A400A8B942 /* NotificationTableViewCell.xib */,
+				2ACEFABA2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift */,
+				2ACEFABB2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,10 +290,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ACEFAB92AD9B1A400A8B942 /* NotificationTableViewCell.xib in Resources */,
 				2AB8335F2ACB591D000BC44E /* PostDetailTableViewCell.xib in Resources */,
 				2ADCB9782AC2F30B002FCB4C /* LaunchScreen.storyboard in Resources */,
 				2ADCB9752AC2F30B002FCB4C /* Assets.xcassets in Resources */,
 				2AB833582ACB4731000BC44E /* GoogleService-Info.plist in Resources */,
+				2ACEFABD2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib in Resources */,
 				2ADCB9732AC2F309002FCB4C /* Main.storyboard in Resources */,
 				2ADCB9842ACA7F06002FCB4C /* PostTableViewCell.xib in Resources */,
 				2AB833632ACB5A1F000BC44E /* CommentsTableViewCell.xib in Resources */,
@@ -301,11 +321,15 @@
 				2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */,
 				2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */,
 				2AB611682AD1B66F00F03623 /* UserModel.swift in Sources */,
+				2ACEFABC2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift in Sources */,
+				2ACEFAB52AD9B15D00A8B942 /* NotificationViewController.swift in Sources */,
 				2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */,
 				2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */,
 				2ADCB96E2AC2F309002FCB4C /* SceneDelegate.swift in Sources */,
+				2ACEFAB82AD9B1A400A8B942 /* NotificationTableViewCell.swift in Sources */,
 				2A6ECA282AD5B82E0010F573 /* NickNameSettingViewController.swift in Sources */,
 				2ADCB9832ACA7F06002FCB4C /* PostTableViewCell.swift in Sources */,
+				2ACEFABF2AD9B69A00A8B942 /* NotificationModel.swift in Sources */,
 				2AB833622ACB5A1F000BC44E /* CommentsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

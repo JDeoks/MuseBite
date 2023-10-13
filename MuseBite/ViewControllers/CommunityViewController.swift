@@ -90,7 +90,7 @@ class CommunityViewController: UIViewController {
     }
 
     func showLoginRequiredAlert () {
-        let sheet = UIAlertController(title: "로그인 후 이용 가능한 서비스입니다.", message: "로그인으로 더 많은 서비스 사용해보세요.", preferredStyle: .alert)
+        let sheet = UIAlertController(title: "로그인 후 이용 가능한 서비스입니다.", message: "로그인으로 더 많은 서비스를 사용해보세요.", preferredStyle: .alert)
         sheet.addAction(UIAlertAction(title: "로그인", style: .default, handler: { _ in
             print("yes 클릭")
             let LogInVC = self.storyboard?.instantiateViewController(identifier: "LogInViewController") as! LogInViewController
