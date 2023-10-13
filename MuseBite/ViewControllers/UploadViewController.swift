@@ -23,8 +23,6 @@ class UploadViewController: UIViewController {
     func uploadPost() {
         let postCollection = Firestore.firestore().collection("post")
         var ref: DocumentReference? = nil
-        // TODO: 디버그용
-        print("userID : \(LoginManager.shared.getUserID())")
         ref = postCollection.addDocument(data: [
             "title": titleTextField.text ?? "",
             "desc": descTextField.text ?? "",

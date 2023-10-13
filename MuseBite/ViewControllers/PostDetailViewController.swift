@@ -53,6 +53,7 @@ class PostDetailViewController: UIViewController {
         if let comment = commentTextField.text {
             if comment == "" { return }
             uploadComment(comment: comment)
+            registerNotification(comment: comment)
         }
         commentTextField.text = ""
     }
@@ -125,6 +126,26 @@ class PostDetailViewController: UIViewController {
             }
         }
         
+    }
+    
+    func registerNotification(comment: String) {
+        let notiCollection = Firestore.firestore().collection("notification")
+        var ref: DocumentReference? = nil
+        ref = notiCollection.addDocument(data: [
+            "createdTime": Timestamp(date: Date()),
+            "userID": postData?.userID,
+            "postID": postID,
+            "title": postData!.title,
+            "comment": comment,
+            "userNickName": LoginManager.shared.getUserNickName()
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                self.fetchRecentCommentData()
+            }
+        }
     }
     
     func showLoginRequiredAlert () {
