@@ -18,7 +18,7 @@ class NotificationModel {
     var userID: String
     var title: String
     var comment: String
-    var commentUsernickName: String
+    var commentUserNickName: String
     
     init(document: QueryDocumentSnapshot) {
         self.notificationID = document.documentID
@@ -26,7 +26,7 @@ class NotificationModel {
         self.userID = document.data()["userID"] as! String
         self.title = document.data()["title"] as! String
         self.comment = document.data()["comment"] as! String
-        self.commentUsernickName = document.data()["commentUserNickName"] as! String
+        self.commentUserNickName = document.data()["commentUserNickName"] as! String
     }
     
     func getCreateTimeStr() -> String {

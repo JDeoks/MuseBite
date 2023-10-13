@@ -137,7 +137,7 @@ class PostDetailViewController: UIViewController {
             "postID": postID,
             "title": postData!.title,
             "comment": comment,
-            "userNickName": LoginManager.shared.getUserNickName()
+            "commentUserNickName": LoginManager.shared.getUserNickName()
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

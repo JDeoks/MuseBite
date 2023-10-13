@@ -23,6 +23,7 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        fetchNotificationsData()
     }
     
     func initUI() {
@@ -42,7 +43,7 @@ class NotificationViewController: UIViewController {
     }
     
     @objc func pullToRefresh(_ sender: Any) {
-        reloadData()
+        fetchNotificationsData()
         refreshControl.endRefreshing()
     }
     
@@ -53,7 +54,7 @@ class NotificationViewController: UIViewController {
     func fetchNotificationsData() {
         print("DataManager - fetchNotificationsData()")
         let userID = LoginManager.shared.getUserID()
-        let commentQuery = Firestore.firestore().collection("notification").whereField("userID", isEqualTo: userID).order(by: "createdTime", descending: false)
+        let commentQuery = Firestore.firestore().collection("notification").whereField("userID", isEqualTo: userID).order(by: "createdTime", descending: true)
         commentQuery.getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -78,7 +79,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if LoginManager.shared.getLoginStatus() == true {
-            return 10//notifications.count
+            return notifications.count
         } else {
             return 1
         }
@@ -91,7 +92,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
             return cell
         }
         let cell = notificationTableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
-//        cell.setData(data: notifications[indexPath.row])
+        cell.setData(data: notifications[indexPath.row])
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }

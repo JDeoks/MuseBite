@@ -26,7 +26,7 @@ class NotificationTableViewCell: UITableViewCell {
     
     func setData(data: NotificationModel) {
         titleLabel.text = data.title
-        commentLabel.text = "\(data.commentUsernickName)님의 댓글이 달렸어요:\n\(data.comment)"
+        commentLabel.text = "\(data.commentUserNickName)님의 댓글이 달렸어요:\n\(data.comment)"
         createdTimeLabel.text = data.getCreateTimeStr()
     }
 }
