@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseAnalytics
+import SwiftDate
 
 class MyPageViewController: UIViewController {
     
@@ -30,6 +34,7 @@ class MyPageViewController: UIViewController {
     @IBAction func closeButtonClicked(_ sender: Any) {
         guard let newNickName = nickNameTextField.text else { return }
         LoginManager.shared.setUserNickName(newNickName)
+        uploadUserNickName(nickName: newNickName)
         self.dismiss(animated: true)
     }
     
@@ -41,6 +46,21 @@ class MyPageViewController: UIViewController {
     @IBAction func unLinkButttonClicked(_ sender: Any) {
         // 닉네임을 입력해주세요
         KakaoAuthManager.shared.kakaoUnLink()
+    }
+    
+    func uploadUserNickName(nickName: String) {
+        let userID = LoginManager.shared.getUserID()
+        let userRef = Firestore.firestore().collection("user").document(userID)
+        userRef.updateData([
+            "nickName": nickName
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+
     }
     
 }

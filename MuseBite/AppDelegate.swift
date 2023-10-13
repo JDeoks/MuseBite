@@ -20,7 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 네이티브 앱 키를 사용해 iOS SDK를 초기화
         let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""
         KakaoSDK.initSDK(appKey: nativeAppKey as! String)
+        fetchUserInfo()
         return true
+    }
+    
+    func fetchUserInfo() {
+        if LoginManager.shared.getLoginStatus() == true {
+            let userID = LoginManager.shared.getUserID()
+            let userRef = Firestore.firestore().collection("user").document(userID)
+            userRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    LoginManager.shared.signIn(userDoc: document)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

@@ -108,4 +108,12 @@ class LoginManager {
         self.setUserNickName(userDoc.data()["nickName"] as! String)
     }
     
+    func signIn(userDoc: DocumentSnapshot) {
+        print("LoginManager - signIn(userDoc:)")
+        self.setUserID(userDoc.documentID)
+        self.setLoginStatus(true)
+        self.setOAuthID(userDoc["oauthID"] as! String)
+        self.setUserNickName(userDoc["nickName"] as! String)
+    }
+    
 }
