@@ -13,24 +13,23 @@ import RxSwift
 
 class PostDetailViewController: UIViewController {
     
+    let postDetailVM = PostDetailViewModel()
+    var postID: String = ""
+    let refreshControl = UIRefreshControl()
+    
     let disposeBag = DisposeBag()
     
+    @IBOutlet var backButton: UIButton!
     @IBOutlet var postDetailTableView: UITableView!
     @IBOutlet var commentTextField: UITextField!
-    
-    var postID: String = ""
-    var postData: PostModel? = nil
-//    var comments: [CommentModel] = []
-    
-    let postDetailVM = PostDetailViewModel()
-    let refreshControl = UIRefreshControl()
+    @IBOutlet var uploadButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initUI()
+        action()
         bind()
-        postDetailVM.fetchRecentCommentData(postID: postID)
+        postDetailVM.fetchRecentCommentData()
     }
     
     func initUI() {
@@ -47,30 +46,43 @@ class PostDetailViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
     
+    func action() {
+        backButton.rx.tap
+            .subscribe { _ in
+                self.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        uploadButton.rx.tap
+            .subscribe { _ in
+                if let comment = self.commentTextField.text {
+                    self.postDetailVM.uploadComment(comment: comment)
+                }
+                self.commentTextField.text = ""
+            }
+            .disposed(by: disposeBag)
+    }
+    
     /// 뷰모델의 옵저버블을 구독
     func bind() {
-        postDetailVM.fetchCommentDone
+        postDetailVM.fetchPostDataDone
             .subscribe(onNext: { _ in
                 self.postDetailTableView.reloadData()
             })
             .disposed(by: disposeBag)
-    }
-    
-    @IBAction func backButtonClicked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
         
-    @IBAction func uplaodCommentButtonClicked(_ sender: Any) {
-        if LoginManager.shared.getLoginStatus() == false {
-            showLoginRequiredAlert()
-            return
-        }
-        if let comment = commentTextField.text {
-            if comment == "" { return }
-            postDetailVM.uploadComment(comment: comment, postID: postID)
-            registerNotification(comment: comment)
-        }
-        commentTextField.text = ""
+        postDetailVM.fetchRecentCommentDataDone
+            .subscribe(onNext: { _ in
+                self.postDetailTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        
+        postDetailVM.showLoginRequired
+            .subscribe { _ in
+                self.showLoginRequiredAlert()
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     @objc func pullToRefresh(_ sender: Any) {
@@ -78,67 +90,17 @@ class PostDetailViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    func setData(post: PostModel) {
-        self.postData = post
-        self.postID = post.postID
-    }
-    
     func reloadPage() {
-        fetchPostData()
-        postDetailVM.fetchRecentCommentData(postID: postID)
+        postDetailVM.fetchPostData()
+        postDetailVM.fetchRecentCommentData()
     }
-    
-    func fetchPostData() {
-        print("PostDetailViewController - fetchPostData()")
-        let postDoc = Firestore.firestore().collection("post").document(postID)
-        postDoc.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let post = PostModel(document: document)
-                self.setData(post: post)
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
-    
-    func registerNotification(comment: String) {
-        let notiCollection = Firestore.firestore().collection("notification")
-        var ref: DocumentReference? = nil
-        ref = notiCollection.addDocument(data: [
-            "createdTime": Timestamp(date: Date()),
-            "userID": postData?.userID,
-            "postID": postID,
-            "title": postData!.title,
-            "comment": comment,
-            "commentUserNickName": LoginManager.shared.getUserNickName()
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                self.postDetailVM.fetchRecentCommentData(postID: self.postID)
-            }
-        }
-    }
-    
-    func showLoginRequiredAlert () {
-        let sheet = UIAlertController(title: "로그인 후 이용 가능한 서비스입니다.", message: "로그인으로 더 많은 서비스를 사용해보세요.", preferredStyle: .alert)
-        sheet.addAction(UIAlertAction(title: "로그인", style: .default, handler: { _ in
-            print("yes 클릭")
-            let LogInVC = self.storyboard?.instantiateViewController(identifier: "LogInViewController") as! LogInViewController
-            LogInVC.modalPresentationStyle = .overFullScreen
-            self.present(LogInVC, animated: true)
-            return
-        }))
-        sheet.addAction(UIAlertAction(title: "취소", style: .cancel ))
-        present(sheet, animated: true)
-    }
-    
+
 }
 
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // index 0은 post
         return postDetailVM.comments.count + 1
     }
     
@@ -146,7 +108,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
         // 글 표시
         if indexPath.row == 0 {
             let cell = postDetailTableView.dequeueReusableCell(withIdentifier: "PostDetailTableViewCell") as! PostDetailTableViewCell
-            cell.setData(post: postData!)
+            cell.setData(post: postDetailVM.postData!)
             //cell 선택시 선택효과 제거
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
@@ -157,9 +119,5 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
     
 }

@@ -36,6 +36,7 @@
 		2AB833852ACBE13D000BC44E /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB833842ACBE13D000BC44E /* FirebaseRemoteConfig */; };
 		2AB833872ACBE13D000BC44E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB833862ACBE13D000BC44E /* FirebaseStorage */; };
 		2AB9C0612AF12DEC00C1F357 /* NickNameSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */; };
+		2AB9C0642AF1640000C1F357 /* UIViewControllerLoginAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C0632AF1640000C1F357 /* UIViewControllerLoginAlert.swift */; };
 		2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */; };
 		2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756932ACACA4F002CE496 /* MyPageViewController.swift */; };
 		2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756952ACACA59002CE496 /* LogInViewController.swift */; };
@@ -75,6 +76,7 @@
 		2AB833612ACB5A1F000BC44E /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		2AB833642ACB5CCF000BC44E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameSettingViewModel.swift; sourceTree = "<group>"; };
+		2AB9C0632AF1640000C1F357 /* UIViewControllerLoginAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerLoginAlert.swift; sourceTree = "<group>"; };
 		2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2AC756932ACACA4F002CE496 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		2AC756952ACACA59002CE496 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		2AB9C0622AF163A900C1F357 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2AB9C0632AF1640000C1F357 /* UIViewControllerLoginAlert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2AC756972ACACB21002CE496 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 				2ADCB9802ACA7EE4002FCB4C /* Views */,
 				2A9ABDF42ACBE3C0008CFAFB /* Models */,
 				2AC756972ACACB21002CE496 /* Managers */,
+				2AB9C0622AF163A900C1F357 /* Extensions */,
 				2ADCB9742AC2F30B002FCB4C /* Assets.xcassets */,
 				2ADCB9762AC2F30B002FCB4C /* LaunchScreen.storyboard */,
 				2ADCB9792AC2F30B002FCB4C /* Info.plist */,
@@ -336,6 +347,7 @@
 				2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */,
 				2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */,
 				2AB611682AD1B66F00F03623 /* UserModel.swift in Sources */,
+				2AB9C0642AF1640000C1F357 /* UIViewControllerLoginAlert.swift in Sources */,
 				2ACEFABC2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift in Sources */,
 				2ACEFAB52AD9B15D00A8B942 /* NotificationViewController.swift in Sources */,
 				2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */,

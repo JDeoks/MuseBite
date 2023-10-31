@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 class NickNameSettingViewModel {
+    
     let disposeBag = DisposeBag()
     
     let nickname = BehaviorSubject(value: "")

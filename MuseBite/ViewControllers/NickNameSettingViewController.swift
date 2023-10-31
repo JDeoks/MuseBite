@@ -11,10 +11,11 @@ import RxCocoa
 
 class NickNameSettingViewController: UIViewController {
     
+    // 자원 정리를 위한 DisposeBag
     let disposeBag = DisposeBag()
-    
     let viewModel = NickNameSettingViewModel()
     
+    @IBOutlet var closeButton: UIButton!
     @IBOutlet var nickNameTextField: UITextField!
     @IBOutlet var startButton: UIButton!
     
@@ -26,6 +27,12 @@ class NickNameSettingViewController: UIViewController {
     
     // UI 이벤트 구독
     private func action() {
+        closeButton.rx.tap
+            .subscribe { _ in
+                self.dismiss(animated: true)
+            }
+            .disposed(by: disposeBag)
+        
         nickNameTextField.rx.text.orEmpty
             .bind(to: viewModel.nickname)
             .disposed(by: disposeBag)
@@ -42,7 +49,7 @@ class NickNameSettingViewController: UIViewController {
         viewModel.validation
             .subscribe(onNext: { isValid in
                 self.startButton.isEnabled = isValid
-                self.startButton.backgroundColor = isValid ? .blue : .gray
+                self.startButton.backgroundColor = isValid ? UIColor(named: "HighlightBlue") : UIColor(named: "TitleSeparGray")
             })
             .disposed(by: disposeBag)
         
