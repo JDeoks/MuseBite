@@ -35,6 +35,7 @@
 		2AB833832ACBE13D000BC44E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB833822ACBE13D000BC44E /* FirebaseMessaging */; };
 		2AB833852ACBE13D000BC44E /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB833842ACBE13D000BC44E /* FirebaseRemoteConfig */; };
 		2AB833872ACBE13D000BC44E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB833862ACBE13D000BC44E /* FirebaseStorage */; };
+		2AB9C0612AF12DEC00C1F357 /* NickNameSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */; };
 		2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */; };
 		2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756932ACACA4F002CE496 /* MyPageViewController.swift */; };
 		2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC756952ACACA59002CE496 /* LogInViewController.swift */; };
@@ -45,6 +46,7 @@
 		2ACEFABC2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFABA2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift */; };
 		2ACEFABD2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACEFABB2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib */; };
 		2ACEFABF2AD9B69A00A8B942 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACEFABE2AD9B69A00A8B942 /* NotificationModel.swift */; };
+		2AD5B64B2AE2A23200F73229 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5B64A2AE2A23100F73229 /* PostDetailViewModel.swift */; };
 		2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */; };
 		2ADCB96E2AC2F309002FCB4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */; };
 		2ADCB9702AC2F309002FCB4C /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB96F2AC2F309002FCB4C /* CommunityViewController.swift */; };
@@ -72,6 +74,7 @@
 		2AB833602ACB5A1E000BC44E /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		2AB833612ACB5A1F000BC44E /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		2AB833642ACB5CCF000BC44E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameSettingViewModel.swift; sourceTree = "<group>"; };
 		2AC756912ACAC9E1002CE496 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2AC756932ACACA4F002CE496 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		2AC756952ACACA59002CE496 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		2ACEFABA2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNonLoginTableViewCell.swift; sourceTree = "<group>"; };
 		2ACEFABB2AD9B5E700A8B942 /* NotificationNonLoginTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationNonLoginTableViewCell.xib; sourceTree = "<group>"; };
 		2ACEFABE2AD9B69A00A8B942 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		2AD5B64A2AE2A23100F73229 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 		2ADCB9682AC2F309002FCB4C /* MuseBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2AAAFDC22AE6813E003C1BFE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2AD5B64A2AE2A23100F73229 /* PostDetailViewModel.swift */,
+				2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2AC756972ACACB21002CE496 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 				2ADCB96B2AC2F309002FCB4C /* AppDelegate.swift */,
 				2ADCB96D2AC2F309002FCB4C /* SceneDelegate.swift */,
 				2ADCB97F2ACA7EB3002FCB4C /* ViewControllers */,
+				2AAAFDC22AE6813E003C1BFE /* ViewModels */,
 				2ADCB9802ACA7EE4002FCB4C /* Views */,
 				2A9ABDF42ACBE3C0008CFAFB /* Models */,
 				2AC756972ACACB21002CE496 /* Managers */,
@@ -318,6 +332,7 @@
 				2AC756992ACACB5B002CE496 /* LoginManager.swift in Sources */,
 				2A9ABDF62ACBE3D5008CFAFB /* PostModel.swift in Sources */,
 				2AC756942ACACA4F002CE496 /* MyPageViewController.swift in Sources */,
+				2AB9C0612AF12DEC00C1F357 /* NickNameSettingViewModel.swift in Sources */,
 				2ADCB96C2AC2F309002FCB4C /* AppDelegate.swift in Sources */,
 				2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */,
 				2AB611682AD1B66F00F03623 /* UserModel.swift in Sources */,
@@ -326,6 +341,7 @@
 				2AC756962ACACA59002CE496 /* LogInViewController.swift in Sources */,
 				2AC756922ACAC9E1002CE496 /* MainTabBarController.swift in Sources */,
 				2ADCB96E2AC2F309002FCB4C /* SceneDelegate.swift in Sources */,
+				2AD5B64B2AE2A23200F73229 /* PostDetailViewModel.swift in Sources */,
 				2ACEFAB82AD9B1A400A8B942 /* NotificationTableViewCell.swift in Sources */,
 				2A6ECA282AD5B82E0010F573 /* NickNameSettingViewController.swift in Sources */,
 				2ADCB9832ACA7F06002FCB4C /* PostTableViewCell.swift in Sources */,
@@ -410,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -466,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

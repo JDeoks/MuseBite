@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uhI-CE-KvW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hUW-eD-TW3">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,13 +23,13 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커뮤니티" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82d-gq-fLg">
-                                        <rect key="frame" x="24" y="0.0" width="97" height="56"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <rect key="frame" x="23.999999999999993" y="0.0" width="83.333333333333314" height="56"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" name="TextWB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfT-eS-CYj">
-                                        <rect key="frame" x="121" y="0.0" width="205" height="56"/>
+                                        <rect key="frame" x="107.33333333333333" y="0.0" width="218.66666666666669" height="56"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0sy-8g-wwl">
@@ -208,7 +208,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ziu-Iq-M0e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackGroundWB"/>
                         <constraints>
                             <constraint firstItem="z05-jr-2m7" firstAttribute="bottom" secondItem="ziu-Iq-M0e" secondAttribute="bottom" constant="-250" id="ALJ-aR-ab7"/>
                             <constraint firstItem="xVE-S2-vqa" firstAttribute="leading" secondItem="ziu-Iq-M0e" secondAttribute="leading" id="Bs1-8q-S7V"/>
@@ -355,7 +355,7 @@
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxZ-oU-y3z">
                                                         <rect key="frame" x="24" y="69" width="342" height="400"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="400" id="6PY-E2-zI1"/>
                                                         </constraints>
@@ -367,7 +367,7 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="8" right="24"/>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Y2C-RH-hNH" firstAttribute="leading" secondItem="OK7-BA-upL" secondAttribute="leading" id="1H8-Vg-Ng1"/>
                                             <constraint firstAttribute="bottom" secondItem="Y2C-RH-hNH" secondAttribute="bottom" id="9uz-Pj-fli"/>
@@ -397,7 +397,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C9y-cV-34Y"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackGroundWB"/>
                         <constraints>
                             <constraint firstItem="yxE-9t-TX8" firstAttribute="trailing" secondItem="4Ay-r0-A7b" secondAttribute="trailing" id="24T-gK-KD7"/>
                             <constraint firstItem="yxE-9t-TX8" firstAttribute="bottom" secondItem="4Ay-r0-A7b" secondAttribute="bottom" id="2Bt-0E-UDV"/>
@@ -440,13 +440,13 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="56"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLB-fL-hFh">
-                                        <rect key="frame" x="23.999999999999996" y="0.0" width="48.666666666666657" height="56"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <rect key="frame" x="24" y="0.0" width="45" height="56"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <color key="textColor" name="TextWB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86M-uu-6sM">
-                                        <rect key="frame" x="72.666666666666657" y="0.0" width="293.33333333333337" height="56"/>
+                                        <rect key="frame" x="69" y="0.0" width="297" height="56"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -914,6 +914,10 @@
                             <constraint firstItem="Pgk-WA-ch3" firstAttribute="leading" secondItem="85S-FZ-Qbu" secondAttribute="leading" id="nOv-KX-GcN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nickNameTextField" destination="b84-B4-pW4" id="gTg-kV-RUb"/>
+                        <outlet property="startButton" destination="2em-p1-w1v" id="3ij-c3-ltb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCC-0k-0jL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

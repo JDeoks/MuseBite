@@ -17,7 +17,7 @@ class DataManager {
     private init() { }
     
     var posts: [PostModel] = []
-    ///fetchRecentPostData 성공여부 플래그
+    /// fetchRecentPostData 성공여부 플래그
     let fetchDataDone = PublishSubject<Void>()
     
     func fetchRecentPostData() {

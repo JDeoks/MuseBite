@@ -115,6 +115,7 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
         // postList 비어있지 않을 때 cell에 데이터 넘겨줌
         if indexPath.row < DataManager.shared.posts.count {
             let post = DataManager.shared.posts[indexPath.row]
+            print("postUserID\(post.userID)")
             cell.setData(data: post)
         }
         //cell 선택시 선택효과 제거
@@ -134,5 +135,6 @@ extension CommunityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
     
 }

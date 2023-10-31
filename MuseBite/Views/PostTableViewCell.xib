@@ -35,9 +35,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teh-ui-Dz5">
-                                                <rect key="frame" x="217.33333333333334" y="0.0" width="392.66666666666663" height="50"/>
+                                                <rect key="frame" x="217.33333333333334" y="0.0" width="380.66666666666663" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vD4-D5-Ynz">
+                                                <rect key="frame" x="610" y="0.0" width="0.0" height="50"/>
+                                                <color key="tintColor" name="IconGray"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="ellipsis" catalog="system"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60l-jV-bDQ">
@@ -160,15 +166,9 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="5mf-be-w4I">
-                                                <rect key="frame" x="212.00000000000003" y="37.999999999999972" width="310.66666666666674" height="0.0"/>
+                                                <rect key="frame" x="212" y="37.999999999999972" width="398" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vD4-D5-Ynz">
-                                                <rect key="frame" x="591.66666666666663" y="27" width="18.333333333333371" height="22"/>
-                                                <color key="tintColor" name="IconGray"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="ellipsis" catalog="system"/>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -195,6 +195,7 @@
                 <outlet property="descLabel" destination="o4D-TL-yhd" id="Qa1-OQ-Wdj"/>
                 <outlet property="dislikeCountLabel" destination="h4M-Qk-k34" id="He1-Ni-T9r"/>
                 <outlet property="likeCountLabel" destination="4HL-bt-Tx7" id="ejE-KH-W6x"/>
+                <outlet property="menuButton" destination="vD4-D5-Ynz" id="fpk-ZH-LWG"/>
                 <outlet property="titleLabel" destination="k7Y-GJ-MHP" id="qwK-pK-jC5"/>
                 <outlet property="userNickNameLabel" destination="su0-6e-Tyf" id="ZVL-aH-xLx"/>
             </connections>

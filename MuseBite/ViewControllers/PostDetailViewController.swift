@@ -9,22 +9,28 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import RxSwift
 
 class PostDetailViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
     
     @IBOutlet var postDetailTableView: UITableView!
     @IBOutlet var commentTextField: UITextField!
     
     var postID: String = ""
     var postData: PostModel? = nil
-    var comments: [CommentModel] = []
+//    var comments: [CommentModel] = []
     
+    let postDetailVM = PostDetailViewModel()
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initUI()
-        fetchRecentCommentData()
+        bind()
+        postDetailVM.fetchRecentCommentData(postID: postID)
     }
     
     func initUI() {
@@ -41,6 +47,15 @@ class PostDetailViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
     
+    /// 뷰모델의 옵저버블을 구독
+    func bind() {
+        postDetailVM.fetchCommentDone
+            .subscribe(onNext: { _ in
+                self.postDetailTableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     @IBAction func backButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -52,7 +67,7 @@ class PostDetailViewController: UIViewController {
         }
         if let comment = commentTextField.text {
             if comment == "" { return }
-            uploadComment(comment: comment)
+            postDetailVM.uploadComment(comment: comment, postID: postID)
             registerNotification(comment: comment)
         }
         commentTextField.text = ""
@@ -70,7 +85,7 @@ class PostDetailViewController: UIViewController {
     
     func reloadPage() {
         fetchPostData()
-        fetchRecentCommentData()
+        postDetailVM.fetchRecentCommentData(postID: postID)
     }
     
     func fetchPostData() {
@@ -84,48 +99,6 @@ class PostDetailViewController: UIViewController {
                 print("Document does not exist")
             }
         }
-    }
-    
-    func fetchRecentCommentData() {
-        print("PostDetailViewController - fetchRecentCommentData()")
-        let commentQuery = Firestore.firestore().collection("comment").whereField("postID", isEqualTo: postID).order(by: "createdTime", descending: false)
-        commentQuery.getDocuments { querySnapshot, error in
-            if let error = error {
-                print("Error getting documents: \(error)")
-                // 에러 처리: 사용자에게 메시지 표시 또는 기록
-                return
-            }
-            guard let documents = querySnapshot?.documents else {
-                print("No documents found.")
-                return
-            }
-            self.comments.removeAll()
-            for document in documents {
-                let comment = CommentModel(document: document)
-                self.comments.append(comment)
-            }
-            self.postDetailTableView.reloadData()
-        }
-    }
-    
-    func uploadComment(comment: String) {
-        let commentCollection = Firestore.firestore().collection("comment")
-        var ref: DocumentReference? = nil
-        ref = commentCollection.addDocument(data: [
-            "content": comment,
-            "createdTime": Timestamp(date: Date()),
-            "userID": LoginManager.shared.getUserID(),
-            "userNickName": LoginManager.shared.getUserNickName(),
-            "postID": postID
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                self.fetchRecentCommentData()
-            }
-        }
-        
     }
     
     func registerNotification(comment: String) {
@@ -143,7 +116,7 @@ class PostDetailViewController: UIViewController {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
-                self.fetchRecentCommentData()
+                self.postDetailVM.fetchRecentCommentData(postID: self.postID)
             }
         }
     }
@@ -166,7 +139,7 @@ class PostDetailViewController: UIViewController {
 extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return comments.count + 1
+        return postDetailVM.comments.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -179,7 +152,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else { // 댓글 표시
             let cell = postDetailTableView.dequeueReusableCell(withIdentifier: "CommentsTableViewCell") as! CommentsTableViewCell
-            cell.setData(data: comments[indexPath.row - 1])
+            cell.setData(data: postDetailVM.comments[indexPath.row - 1])
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
         }
