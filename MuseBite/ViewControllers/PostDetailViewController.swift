@@ -82,7 +82,6 @@ class PostDetailViewController: UIViewController {
                 self.showLoginRequiredAlert()
             }
             .disposed(by: disposeBag)
-        
     }
     
     @objc func pullToRefresh(_ sender: Any) {

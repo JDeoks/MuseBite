@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         let index = tabBarController.viewControllers?.firstIndex(of: viewController)
         print("MainTabBarController - tabBarController(shouldSelect) index = \(index!)")
 //        LoginManager.shared.saveUserLoginStatus(isLoggedIn: false)
-        if index == 2 {
+        if index == 3 {
             if LoginManager.shared.getLoginStatus() == true {
                 print("로그인 되어있음")
                 let myPageVC = self.storyboard?.instantiateViewController(identifier: "MyPageViewController") as! MyPageViewController

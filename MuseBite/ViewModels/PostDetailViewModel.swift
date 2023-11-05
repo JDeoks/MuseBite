@@ -50,7 +50,6 @@ class PostDetailViewModel {
         commentQuery.getDocuments { querySnapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
-                // 에러 처리: 사용자에게 메시지 표시 또는 기록
                 return
             }
             guard let documents = querySnapshot?.documents else {
@@ -62,6 +61,7 @@ class PostDetailViewModel {
                 let comment = CommentModel(document: document)
                 self.comments.append(comment)
             }
+            
             // 패치 완료를 알림
             self.fetchRecentCommentDataDone.onNext(())
         }
@@ -74,7 +74,9 @@ class PostDetailViewModel {
             showLoginRequired.onNext(())
             return
         }
+        
         if comment == "" { return }
+        
         let commentCollection = Firestore.firestore().collection("comment")
         var ref: DocumentReference? = nil
         ref = commentCollection.addDocument(data: [

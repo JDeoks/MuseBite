@@ -14,12 +14,12 @@ import SwiftDate
 
 class CommunityViewController: UIViewController {
     
+    let refreshControl = UIRefreshControl()
     let disposeBag = DisposeBag()
 
     @IBOutlet var postTableView: UITableView!
     @IBOutlet var writePostButton: UIButton!
     
-    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
