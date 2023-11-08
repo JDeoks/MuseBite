@@ -40,6 +40,7 @@ class KakaoAuthManager: ObservableObject {
     
     func kakaoLoginWithApp() {
         print("KakaoAuthManager - kakaoLoginWithApp()")
+        // 여기서 UserApi 싱글톤 객체에 카카오 로그인 정보 저장됨
         UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
             if let error = error {
                 print(error)
@@ -47,6 +48,7 @@ class KakaoAuthManager: ObservableObject {
             else {
                 print(oauthToken!)
                 print("kakaoLoginWithApp() success.")
+                // TODO: - 여기말고 닉네임
                 self.getUserOAuthID()
             }
         }
@@ -60,7 +62,7 @@ class KakaoAuthManager: ObservableObject {
             }
             else {
                 print("OAuthID = kakao_\(String(describing: user!.id))")
-                return LoginManager.shared.setUserByOAuthID(oauthID: "kakao_\(String(describing: user!.id!))")
+                LoginManager.shared.setUserByOAuthID(oauthID: "kakao_\(String(describing: user!.id!))")
             }
         }
     }

@@ -27,7 +27,7 @@ class PostTableViewCell: UITableViewCell {
     }()
     
     lazy var myPostMenu: UIMenu = {
-        return UIMenu(title: "", options: [], children: myPostMenuItems)
+        return UIMenu(title: "", options: [], children: menuItems)
     }()
     
     var menuItems: [UIAction] = {
@@ -50,6 +50,26 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func initUI() {
+//        if postUserID == LoginManager.shared.getUserID() {
+//            print(postUserID, LoginManager.shared.getUserID())
+//            print("아이디 같음")
+//            menuButton.menu = myPostMenu
+//        } else {
+//            print(postUserID, LoginManager.shared.getUserID())
+//            print("아이디 다름")
+//            menuButton.menu = menu
+//        }
+//        menuButton.showsMenuAsPrimaryAction = true
+    }
+    
+    func setData(data: PostModel) {
+        postUserID = data.userID
+        titleLabel.text = data.title
+        descLabel.text = data.desc
+        createdTimeLabel.text = data.getCreateTimeStr()
+        userNickNameLabel.text = data.userNickName
+        
+        // 여기서 버튼 유형 결정
         if postUserID == LoginManager.shared.getUserID() {
             print(postUserID, LoginManager.shared.getUserID())
             print("아이디 같음")
@@ -60,14 +80,6 @@ class PostTableViewCell: UITableViewCell {
             menuButton.menu = menu
         }
         menuButton.showsMenuAsPrimaryAction = true
-    }
-    
-    func setData(data: PostModel) {
-        postUserID = data.userID
-        titleLabel.text = data.title
-        descLabel.text = data.desc
-        createdTimeLabel.text = data.getCreateTimeStr()
-        userNickNameLabel.text = data.userNickName
     }
     
 }

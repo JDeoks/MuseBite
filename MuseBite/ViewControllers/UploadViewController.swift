@@ -9,35 +9,28 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import RxSwift
 
 class UploadViewController: UIViewController {
     
+    let uploadVM = UploadViewModel()
+    let disposBag = DisposeBag()
+    
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var descTextField: UITextView!
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        bind()
     }
     
-    func uploadPost() {
-        let postCollection = Firestore.firestore().collection("post")
-        var ref: DocumentReference? = nil
-        ref = postCollection.addDocument(data: [
-            "title": titleTextField.text ?? "",
-            "desc": descTextField.text ?? "",
-            "createdTime": Timestamp(date: Date()),
-            "userID": LoginManager.shared.getUserID(),
-            "userNickName": LoginManager.shared.getUserNickName()
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                DataManager.shared.fetchRecentPostData()
+    func bind() {
+        uploadVM.uploadDone
+            .subscribe(onNext: { _ in
+                print("닫혀야지")
                 self.dismiss(animated: true)
-            }
-        }
+            })
+            .disposed(by: disposBag)
     }
 
     @IBAction func closeButtonClicked(_ sender: Any) {
@@ -49,6 +42,6 @@ class UploadViewController: UIViewController {
             // TODO:  제목을 입력하세요
             return
         }
-        uploadPost()
+        uploadVM.upload(title: titleTextField.text!, desc: descTextField.text!)
     }
 }

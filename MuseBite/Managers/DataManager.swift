@@ -47,6 +47,26 @@ class DataManager {
         }
     }
     
+    func uploadPost(title: String, desc: String, completion: @escaping () -> ()) {
+        let postCollection = Firestore.firestore().collection("post")
+        var ref: DocumentReference? = nil
+        ref = postCollection.addDocument(data: [
+            "title": title,
+            "desc": desc,
+            "createdTime": Timestamp(date: Date()),
+            "userID": LoginManager.shared.getUserID(),
+            "userNickName": LoginManager.shared.getUserNickName()
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                completion()
+            }
+        }
+    }
+    
+    
     func getUser(userID: String) -> String {
         let userCollection = Firestore.firestore().collection("user")
         let doc = userCollection.document(userID)

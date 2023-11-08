@@ -21,5 +21,6 @@ class LogInViewController: UIViewController {
     @IBAction func kakaoLoginButtonClicked(_ sender: Any) {
         KakaoAuthManager.shared.handleKakaoLogin()
         self.dismiss(animated: true)
+        
     }
 }

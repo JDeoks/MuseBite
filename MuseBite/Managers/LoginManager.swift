@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
+import RxSwift
 
 class LoginManager {
     
@@ -16,7 +17,7 @@ class LoginManager {
     static let shared = LoginManager() /// 싱글톤 인스턴스
     
     let userCollection = Firestore.firestore().collection("user")
-    
+     
     private init() {} // 외부에서 인스턴스 생성 방지
 
     /// 앱 사용자의 로그인 상태 설정

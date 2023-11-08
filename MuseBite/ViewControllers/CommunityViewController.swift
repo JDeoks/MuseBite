@@ -69,6 +69,10 @@ class CommunityViewController: UIViewController {
     @IBAction func uploadButtonClicked(_ sender: Any) {
         if LoginManager.shared.getLoginStatus() == false {
             showLoginRequiredAlert()
+            
+            
+            
+            
             return
         }
         let uploadVC = self.storyboard?.instantiateViewController(identifier: "UploadViewController") as! UploadViewController

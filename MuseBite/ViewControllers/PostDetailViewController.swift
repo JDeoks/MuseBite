@@ -58,6 +58,7 @@ class PostDetailViewController: UIViewController {
                 if let comment = self.commentTextField.text {
                     self.postDetailVM.uploadComment(comment: comment)
                 }
+                // TODO: - 업로드 성공했을 때 텍스트필드 비우는 식으로 변경
                 self.commentTextField.text = ""
             }
             .disposed(by: disposeBag)
