@@ -14,9 +14,8 @@ import RxSwift
 
 class NotificationViewController: UIViewController {
     
-    var notifications: [NotificationModel] = []
-    
     let notificationViewModel = NotificationViewModel()
+    
     let disposeBag = DisposeBag()
     
     let refreshControl = UIRefreshControl()
@@ -27,7 +26,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         bind()
-        fetchNotificationsData()
+        notificationViewModel.fetchNotificationsData()
     }
     
     func initUI() {
@@ -46,6 +45,11 @@ class NotificationViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    @objc func pullToRefresh(_ sender: Any) {
+        notificationViewModel.fetchNotificationsData()
+        refreshControl.endRefreshing()
+    }
+    
     func bind() {
         notificationViewModel.getPostByIdDone
             .subscribe { _ in
@@ -54,47 +58,21 @@ class NotificationViewController: UIViewController {
                 self.navigationController?.pushViewController(postDetailVC, animated: true)
             }
             .disposed(by: disposeBag)
-    }
-    
-    @objc func pullToRefresh(_ sender: Any) {
-        fetchNotificationsData()
-        refreshControl.endRefreshing()
-    }
-    
-    func reloadData() {
-        self.notificationTableView.reloadData()
+        
+        notificationViewModel.fetchNotificationsDataDone
+            .subscribe { _ in
+                self.notificationTableView.reloadData()
+            }
+            .disposed(by: disposeBag)
     }
 
-    func fetchNotificationsData() {
-        print("DataManager - fetchNotificationsData()")
-        
-        let userID = LoginManager.shared.getUserID()
-        let commentQuery = Firestore.firestore().collection("notification").whereField("userID", isEqualTo: userID).order(by: "createdTime", descending: true)
-        commentQuery.getDocuments { querySnapshot, error in
-            if let error = error {
-                print("Error getting documents: \(error)")
-                // 에러 처리: 사용자에게 메시지 표시 또는 기록
-                return
-            }
-            guard let documents = querySnapshot?.documents else {
-                print("No documents found.")
-                return
-            }
-            self.notifications.removeAll()
-            for document in documents {
-                let noti = NotificationModel(document: document)
-                self.notifications.append(noti)
-            }
-            self.notificationTableView.reloadData()
-        }
-    }
 }
 
 extension NotificationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if LoginManager.shared.getLoginStatus() == true {
-            return notifications.count
+            return notificationViewModel.notifications.count
         } else {
             return 1
         }
@@ -107,13 +85,13 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
             return cell
         }
         let cell = notificationTableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
-        cell.setData(data: notifications[indexPath.row])
+        cell.setData(data: notificationViewModel.notifications[indexPath.row])
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        notificationViewModel.getPostById(postId: notifications[indexPath.row].postID)
+        notificationViewModel.getPostById(postId: notificationViewModel.notifications[indexPath.row].postID)
     }
 
 }
