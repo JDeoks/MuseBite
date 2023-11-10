@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -193,7 +193,9 @@
                 <outlet property="commentCountLabel" destination="22j-up-G2N" id="S25-9J-QaC"/>
                 <outlet property="createdTimeLabel" destination="jrW-wg-tnk" id="xwR-Ph-CaB"/>
                 <outlet property="descLabel" destination="o4D-TL-yhd" id="Qa1-OQ-Wdj"/>
+                <outlet property="dislikeButton" destination="fL0-Jb-Vxw" id="mdm-Lk-n9N"/>
                 <outlet property="dislikeCountLabel" destination="h4M-Qk-k34" id="He1-Ni-T9r"/>
+                <outlet property="likeButton" destination="JYQ-By-Utu" id="B1I-Qf-xdN"/>
                 <outlet property="likeCountLabel" destination="4HL-bt-Tx7" id="ejE-KH-W6x"/>
                 <outlet property="menuButton" destination="vD4-D5-Ynz" id="fpk-ZH-LWG"/>
                 <outlet property="titleLabel" destination="k7Y-GJ-MHP" id="qwK-pK-jC5"/>

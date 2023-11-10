@@ -14,12 +14,11 @@ import SwiftDate
 
 class CommunityViewController: UIViewController {
     
-    let refreshControl = UIRefreshControl()
     let disposeBag = DisposeBag()
+    let refreshControl = UIRefreshControl()
 
     @IBOutlet var postTableView: UITableView!
     @IBOutlet var writePostButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,10 +68,6 @@ class CommunityViewController: UIViewController {
     @IBAction func uploadButtonClicked(_ sender: Any) {
         if LoginManager.shared.getLoginStatus() == false {
             showLoginRequiredAlert()
-            
-            
-            
-            
             return
         }
         let uploadVC = self.storyboard?.instantiateViewController(identifier: "UploadViewController") as! UploadViewController
@@ -82,7 +77,7 @@ class CommunityViewController: UIViewController {
     }
     
     func bind() {
-        DataManager.shared.fetchDataDone
+        DataManager.shared.fetchRecentPostDataDone
             .subscribe(onNext: { _ in
                 self.postTableView.reloadData()
             })

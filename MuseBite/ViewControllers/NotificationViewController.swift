@@ -10,19 +10,23 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
 import SwiftDate
+import RxSwift
 
 class NotificationViewController: UIViewController {
-
-    
-    @IBOutlet var notificationTableView: UITableView!
     
     var notifications: [NotificationModel] = []
     
+    let notificationViewModel = NotificationViewModel()
+    let disposeBag = DisposeBag()
+    
     let refreshControl = UIRefreshControl()
-
+    
+    @IBOutlet var notificationTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
+        bind()
         fetchNotificationsData()
     }
     
@@ -42,6 +46,16 @@ class NotificationViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func bind() {
+        notificationViewModel.getPostByIdDone
+            .subscribe { _ in
+                let postDetailVC = self.storyboard?.instantiateViewController(identifier: "PostDetailViewController") as! PostDetailViewController
+                postDetailVC.postDetailVM.setPostData(post: self.notificationViewModel.currentPost!)
+                self.navigationController?.pushViewController(postDetailVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
     @objc func pullToRefresh(_ sender: Any) {
         fetchNotificationsData()
         refreshControl.endRefreshing()
@@ -53,6 +67,7 @@ class NotificationViewController: UIViewController {
 
     func fetchNotificationsData() {
         print("DataManager - fetchNotificationsData()")
+        
         let userID = LoginManager.shared.getUserID()
         let commentQuery = Firestore.firestore().collection("notification").whereField("userID", isEqualTo: userID).order(by: "createdTime", descending: true)
         commentQuery.getDocuments { querySnapshot, error in
@@ -95,6 +110,10 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         cell.setData(data: notifications[indexPath.row])
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        notificationViewModel.getPostById(postId: notifications[indexPath.row].postID)
     }
 
 }

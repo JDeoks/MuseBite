@@ -8,17 +8,19 @@
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
+    
+    var postUserID: String?
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
     @IBOutlet var userNickNameLabel: UILabel!
     @IBOutlet var createdTimeLabel: UILabel!
+    @IBOutlet var likeButton: UIButton!
+    @IBOutlet var dislikeButton: UIButton!
     @IBOutlet var likeCountLabel: UILabel!
     @IBOutlet var dislikeCountLabel: UILabel!
     @IBOutlet var commentCountLabel: UILabel!
     @IBOutlet var menuButton: UIButton!
-    
-    var postUserID: String?
     
     var myPostMenuItems: [UIAction] = {
         return [
@@ -62,7 +64,21 @@ class PostTableViewCell: UITableViewCell {
 //        menuButton.showsMenuAsPrimaryAction = true
     }
     
+    func action() {
+        likeButton.rx.tap
+            .subscribe { _ in
+                // 좋아요 개수 서버로 ++하는 코드 컴플리션 필요 없음
+                // 로컬에서 현재 좋아요에 ++해서 적용
+            }
+        dislikeButton.rx.tap
+            .subscribe { _ in
+                // 싫어요 개수 서버로 ++하는 코드 컴플리션 필요 없음
+                // 로컬에서 현재 좋아요에 ++해서 적용
+            }
+    }
+    
     func setData(data: PostModel) {
+        
         postUserID = data.userID
         titleLabel.text = data.title
         descLabel.text = data.desc

@@ -19,6 +19,8 @@ class PostModel {
     var createdTime: Date
     var userID: String
     var userNickName: String
+    var likes: Int?
+    var dislikes: Int?
 //    var audioURL: URL?
 //    var startTime: Int?
     

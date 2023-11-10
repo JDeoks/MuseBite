@@ -27,7 +27,6 @@ class UploadViewController: UIViewController {
     func bind() {
         uploadVM.uploadDone
             .subscribe(onNext: { _ in
-                print("닫혀야지")
                 self.dismiss(animated: true)
             })
             .disposed(by: disposBag)

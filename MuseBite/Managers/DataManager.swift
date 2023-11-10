@@ -16,9 +16,12 @@ class DataManager {
     static let shared = DataManager()
     private init() { }
     
+
+    /// 커뮤니티 탭에서 사용할 포스트 배열
     var posts: [PostModel] = []
-    /// fetchRecentPostData 성공여부 플래그
-    let fetchDataDone = PublishSubject<Void>()
+    /// CommunityViewController - postTableView.reloadData()
+    let fetchRecentPostDataDone = PublishSubject<Void>()
+
     
     func fetchRecentPostData() {
         print("CommunityViewController - fetchRecentPostData()")
@@ -43,7 +46,7 @@ class DataManager {
                 let post = PostModel(document: document)
                 self.posts.append(post)
             }
-            fetchDataDone.onNext(())
+            fetchRecentPostDataDone.onNext(())
         }
     }
     
@@ -66,7 +69,6 @@ class DataManager {
         }
     }
     
-    
     func getUser(userID: String) -> String {
         let userCollection = Firestore.firestore().collection("user")
         let doc = userCollection.document(userID)
@@ -80,5 +82,11 @@ class DataManager {
         }
         return "hello"
     }
+    
+
+    
+//    func updateLikes() {
+//        if
+//    }
 
 }

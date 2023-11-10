@@ -14,6 +14,7 @@ import SwiftDate
 class NotificationModel {
     
     var notificationID: String
+    var postID: String
     var createdTime: Date
     var userID: String
     var title: String
@@ -22,6 +23,7 @@ class NotificationModel {
     
     init(document: QueryDocumentSnapshot) {
         self.notificationID = document.documentID
+        self.postID = document.data()["postID"] as! String
         self.createdTime = (document.data()["createdTime"] as! Timestamp).dateValue()
         self.userID = document.data()["userID"] as! String
         self.title = document.data()["title"] as! String

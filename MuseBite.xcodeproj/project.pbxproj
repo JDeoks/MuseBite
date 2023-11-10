@@ -11,6 +11,7 @@
 		2A2FC27B2AF7B205001064C2 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2FC2792AF7B205001064C2 /* RecordTableViewCell.xib */; };
 		2A2FC27D2AF7BE48001064C2 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC27C2AF7BE48001064C2 /* RecordListViewController.swift */; };
 		2A2FC2A12AFA6998001064C2 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC2A02AFA6998001064C2 /* UploadViewModel.swift */; };
+		2A460FEE2AFEB6DD00847D04 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A460FED2AFEB6DD00847D04 /* NotificationViewModel.swift */; };
 		2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EE42B2AD2933F00692E78 /* CommentModel.swift */; };
 		2A6ECA282AD5B82E0010F573 /* NickNameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6ECA272AD5B82E0010F573 /* NickNameSettingViewController.swift */; };
 		2A9ABDF62ACBE3D5008CFAFB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */; };
@@ -67,6 +68,7 @@
 		2A2FC2792AF7B205001064C2 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		2A2FC27C2AF7BE48001064C2 /* RecordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListViewController.swift; sourceTree = "<group>"; };
 		2A2FC2A02AFA6998001064C2 /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
+		2A460FED2AFEB6DD00847D04 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		2A4EE42B2AD2933F00692E78 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		2A4EE42D2AD296A700692E78 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		2A4EE42E2AD296A700692E78 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				2AD5B64A2AE2A23100F73229 /* PostDetailViewModel.swift */,
 				2AB9C0602AF12DEC00C1F357 /* NickNameSettingViewModel.swift */,
 				2A2FC2A02AFA6998001064C2 /* UploadViewModel.swift */,
+				2A460FED2AFEB6DD00847D04 /* NotificationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				2ADCB9832ACA7F06002FCB4C /* PostTableViewCell.swift in Sources */,
 				2ACEFABF2AD9B69A00A8B942 /* NotificationModel.swift in Sources */,
 				2AB833622ACB5A1F000BC44E /* CommentsTableViewCell.swift in Sources */,
+				2A460FEE2AFEB6DD00847D04 /* NotificationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
