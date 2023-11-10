@@ -12,13 +12,15 @@
 		2A2FC27D2AF7BE48001064C2 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC27C2AF7BE48001064C2 /* RecordListViewController.swift */; };
 		2A2FC2A12AFA6998001064C2 /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC2A02AFA6998001064C2 /* UploadViewModel.swift */; };
 		2A460FEE2AFEB6DD00847D04 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A460FED2AFEB6DD00847D04 /* NotificationViewModel.swift */; };
+		2A4610062AFED2E400847D04 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4610052AFED2E400847D04 /* RxKeyboard */; };
+		2A4610082AFED2F700847D04 /* RxKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 2A4610072AFED2F700847D04 /* RxKeyboard */; };
 		2A4EE42C2AD2933F00692E78 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EE42B2AD2933F00692E78 /* CommentModel.swift */; };
 		2A6ECA282AD5B82E0010F573 /* NickNameSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6ECA272AD5B82E0010F573 /* NickNameSettingViewController.swift */; };
+		2A72DB572AFED3AE00F2020E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2A72DB562AFED3AE00F2020E /* RxCocoa */; };
+		2A72DB592AFED3AE00F2020E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A72DB582AFED3AE00F2020E /* RxSwift */; };
 		2A9ABDF62ACBE3D5008CFAFB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9ABDF52ACBE3D5008CFAFB /* PostModel.swift */; };
 		2A9ABDF82ACC2716008CFAFB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9ABDF72ACC2716008CFAFB /* UploadViewController.swift */; };
 		2AB611492ACC328500F03623 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB611482ACC328400F03623 /* DataManager.swift */; };
-		2AB611612ACC42A500F03623 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB611602ACC42A500F03623 /* RxCocoa */; };
-		2AB611632ACC42A500F03623 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB611622ACC42A500F03623 /* RxSwift */; };
 		2AB611662AD02B3A00F03623 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB611652AD02B3A00F03623 /* SwiftDate */; };
 		2AB611682AD1B66F00F03623 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB611672AD1B66F00F03623 /* UserModel.swift */; };
 		2AB8334E2ACB2584000BC44E /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB8334D2ACB2584000BC44E /* KakaoSDKAuth */; };
@@ -61,7 +63,23 @@
 		2ADCB9782AC2F30B002FCB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ADCB9762AC2F30B002FCB4C /* LaunchScreen.storyboard */; };
 		2ADCB9832ACA7F06002FCB4C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADCB9812ACA7F06002FCB4C /* PostTableViewCell.swift */; };
 		2ADCB9842ACA7F06002FCB4C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ADCB9822ACA7F06002FCB4C /* PostTableViewCell.xib */; };
+		2ADED76F2AFEDD27000BD61F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 2ADED76E2AFEDD27000BD61F /* SnapKit-Dynamic */; };
+		2ADED7702AFEE009000BD61F /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2ADED76E2AFEDD27000BD61F /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2ADED76D2AFEDBB4000BD61F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2ADED7702AFEE009000BD61F /* SnapKit-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2A2FC2782AF7B205001064C2 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,13 +135,16 @@
 			files = (
 				2AB833852ACBE13D000BC44E /* FirebaseRemoteConfig in Frameworks */,
 				2AB833502ACB2584000BC44E /* KakaoSDKCommon in Frameworks */,
+				2A4610082AFED2F700847D04 /* RxKeyboard in Frameworks */,
 				2AB611662AD02B3A00F03623 /* SwiftDate in Frameworks */,
 				2AB833792ACBE13D000BC44E /* FirebaseAuth in Frameworks */,
-				2AB611612ACC42A500F03623 /* RxCocoa in Frameworks */,
+				2ADED76F2AFEDD27000BD61F /* SnapKit-Dynamic in Frameworks */,
 				2AB833832ACBE13D000BC44E /* FirebaseMessaging in Frameworks */,
+				2A72DB572AFED3AE00F2020E /* RxCocoa in Frameworks */,
 				2AB833812ACBE13D000BC44E /* FirebaseInAppMessaging-Beta in Frameworks */,
-				2AB611632ACC42A500F03623 /* RxSwift in Frameworks */,
+				2A72DB592AFED3AE00F2020E /* RxSwift in Frameworks */,
 				2AB833872ACBE13D000BC44E /* FirebaseStorage in Frameworks */,
+				2A4610062AFED2E400847D04 /* RxKeyboard in Frameworks */,
 				2AB8334E2ACB2584000BC44E /* KakaoSDKAuth in Frameworks */,
 				2AB8337B2ACBE13D000BC44E /* FirebaseCrashlytics in Frameworks */,
 				2AB833772ACBE13D000BC44E /* FirebaseAnalytics in Frameworks */,
@@ -258,6 +279,7 @@
 				2ADCB9642AC2F309002FCB4C /* Sources */,
 				2ADCB9652AC2F309002FCB4C /* Frameworks */,
 				2ADCB9662AC2F309002FCB4C /* Resources */,
+				2ADED76D2AFEDBB4000BD61F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,9 +299,12 @@
 				2AB833822ACBE13D000BC44E /* FirebaseMessaging */,
 				2AB833842ACBE13D000BC44E /* FirebaseRemoteConfig */,
 				2AB833862ACBE13D000BC44E /* FirebaseStorage */,
-				2AB611602ACC42A500F03623 /* RxCocoa */,
-				2AB611622ACC42A500F03623 /* RxSwift */,
 				2AB611652AD02B3A00F03623 /* SwiftDate */,
+				2A4610052AFED2E400847D04 /* RxKeyboard */,
+				2A4610072AFED2F700847D04 /* RxKeyboard */,
+				2A72DB562AFED3AE00F2020E /* RxCocoa */,
+				2A72DB582AFED3AE00F2020E /* RxSwift */,
+				2ADED76E2AFEDD27000BD61F /* SnapKit-Dynamic */,
 			);
 			productName = MuseBite;
 			productReference = 2ADCB9682AC2F309002FCB4C /* MuseBite.app */;
@@ -313,8 +338,10 @@
 			packageReferences = (
 				2AB8334C2ACB2584000BC44E /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				2AB833752ACBE13C000BC44E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				2AB6115F2ACC42A500F03623 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				2AB611642AD02B3A00F03623 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				2A4610042AFED2E400847D04 /* XCRemoteSwiftPackageReference "RxKeyboard" */,
+				2A72DB552AFED3AE00F2020E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2ADED7652AFEDAA0000BD61F /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 2ADCB9692AC2F309002FCB4C /* Products */;
 			projectDirPath = "";
@@ -614,12 +641,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2AB6115F2ACC42A500F03623 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		2A4610042AFED2E400847D04 /* XCRemoteSwiftPackageReference "RxKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxKeyboard";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.1;
+			};
+		};
+		2A72DB552AFED3AE00F2020E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 6.6.0;
 			};
 		};
 		2AB611642AD02B3A00F03623 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
@@ -646,17 +681,35 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		2ADED7652AFEDAA0000BD61F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2AB611602ACC42A500F03623 /* RxCocoa */ = {
+		2A4610052AFED2E400847D04 /* RxKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2AB6115F2ACC42A500F03623 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 2A4610042AFED2E400847D04 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
+		};
+		2A4610072AFED2F700847D04 /* RxKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A4610042AFED2E400847D04 /* XCRemoteSwiftPackageReference "RxKeyboard" */;
+			productName = RxKeyboard;
+		};
+		2A72DB562AFED3AE00F2020E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A72DB552AFED3AE00F2020E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		2AB611622ACC42A500F03623 /* RxSwift */ = {
+		2A72DB582AFED3AE00F2020E /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2AB6115F2ACC42A500F03623 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 2A72DB552AFED3AE00F2020E /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 		2AB611652AD02B3A00F03623 /* SwiftDate */ = {
@@ -723,6 +776,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2AB833752ACBE13C000BC44E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		2ADED76E2AFEDD27000BD61F /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2ADED7652AFEDAA0000BD61F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

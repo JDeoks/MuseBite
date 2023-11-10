@@ -274,18 +274,18 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xVE-S2-vqa">
-                                <rect key="frame" x="0.0" y="103" width="390" height="401"/>
+                                <rect key="frame" x="0.0" y="103" width="390" height="651"/>
                                 <color key="backgroundColor" name="PostTableViewWB"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-Dc-7Pa">
-                                <rect key="frame" x="0.0" y="503" width="390" height="1"/>
+                                <rect key="frame" x="0.0" y="753" width="390" height="1"/>
                                 <color key="backgroundColor" name="TitleSeparGray"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Vq7-20-L4p"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z05-jr-2m7">
-                                <rect key="frame" x="0.0" y="504" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="754" width="390" height="56"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글을 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-1W-z2K">
                                         <rect key="frame" x="24" y="0.0" width="298" height="56"/>
@@ -313,7 +313,7 @@
                         <viewLayoutGuide key="safeArea" id="ziu-Iq-M0e"/>
                         <color key="backgroundColor" name="BackGroundWB"/>
                         <constraints>
-                            <constraint firstItem="z05-jr-2m7" firstAttribute="bottom" secondItem="ziu-Iq-M0e" secondAttribute="bottom" constant="-250" id="ALJ-aR-ab7"/>
+                            <constraint firstItem="z05-jr-2m7" firstAttribute="bottom" secondItem="ziu-Iq-M0e" secondAttribute="bottom" id="ALJ-aR-ab7"/>
                             <constraint firstItem="xVE-S2-vqa" firstAttribute="leading" secondItem="ziu-Iq-M0e" secondAttribute="leading" id="Bs1-8q-S7V"/>
                             <constraint firstItem="J1S-du-TcE" firstAttribute="bottom" secondItem="HM2-3k-iza" secondAttribute="bottom" id="IWl-KB-7qZ"/>
                             <constraint firstItem="mW5-Dc-7Pa" firstAttribute="leading" secondItem="z05-jr-2m7" secondAttribute="leading" id="L1U-Tx-hBR"/>
@@ -335,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="8Ki-Ou-TC8" id="Yj2-a9-O6o"/>
+                        <outlet property="commentStackView" destination="z05-jr-2m7" id="p9b-kw-7bg"/>
                         <outlet property="commentTextField" destination="Onk-1W-z2K" id="l4P-YB-arC"/>
                         <outlet property="postDetailTableView" destination="xVE-S2-vqa" id="aeb-ZY-TxH"/>
                         <outlet property="uploadButton" destination="oHi-LM-Iny" id="HKk-52-ehl"/>
@@ -406,27 +407,6 @@
                                     <constraint firstAttribute="height" constant="1" id="MGz-Qe-GHG"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-ou-k2k">
-                                <rect key="frame" x="0.0" y="754" width="390" height="56"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-XZ-31y">
-                                        <rect key="frame" x="24" y="3" width="298" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePN-dA-Jb5">
-                                        <rect key="frame" x="322" y="0.0" width="56" height="56"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="Mtj-Af-xrQ"/>
-                                            <constraint firstAttribute="width" constant="56" id="OuM-p5-h5L"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="waveform" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="12"/>
-                            </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDl-2r-gle">
                                 <rect key="frame" x="0.0" y="103" width="390" height="651"/>
                                 <subviews>
@@ -462,7 +442,7 @@
                                                         <rect key="frame" x="24" y="69" width="342" height="400"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="400" id="6PY-E2-zI1"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="6PY-E2-zI1"/>
                                                         </constraints>
                                                         <color key="textColor" name="TextWB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -500,6 +480,27 @@
                                     <constraint firstAttribute="height" constant="1" id="WpK-U0-uqJ"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-ou-k2k">
+                                <rect key="frame" x="0.0" y="754" width="390" height="56"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-XZ-31y">
+                                        <rect key="frame" x="24" y="3" width="298" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePN-dA-Jb5">
+                                        <rect key="frame" x="322" y="0.0" width="56" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="Mtj-Af-xrQ"/>
+                                            <constraint firstAttribute="width" constant="56" id="OuM-p5-h5L"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="waveform" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="layoutMargins" top="0.0" left="24" bottom="0.0" right="12"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C9y-cV-34Y"/>
                         <color key="backgroundColor" name="BackGroundWB"/>
@@ -526,6 +527,8 @@
                     </view>
                     <connections>
                         <outlet property="descTextField" destination="gxZ-oU-y3z" id="Y3q-Gp-RKm"/>
+                        <outlet property="scrollView" destination="sDl-2r-gle" id="jLJ-mr-heF"/>
+                        <outlet property="textStackView" destination="4Nt-ou-k2k" id="RHr-f9-bxd"/>
                         <outlet property="titleTextField" destination="z9y-cv-R82" id="Hvw-dB-A1z"/>
                     </connections>
                 </viewController>
@@ -1061,7 +1064,7 @@
         <scene sceneID="4Bk-ff-nIi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S6k-q8-8gA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="커뮤니티" image="message.and.waveform.fill" catalog="system" selectedImage="message.and.waveform.fill" id="plM-Le-9A3">
+                    <tabBarItem key="tabBarItem" title="커뮤니티" image="message.badge.waveform.fill" catalog="system" selectedImage="message.badge.waveform.fill" id="plM-Le-9A3">
                         <color key="badgeColor" name="TextWB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1104,7 +1107,7 @@
         <image name="doc" catalog="system" width="115" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="message.and.waveform.fill" catalog="system" width="128" height="113"/>
+        <image name="message.badge.waveform.fill" catalog="system" width="128" height="113"/>
         <image name="paperplane" catalog="system" width="128" height="119"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -1139,7 +1142,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,19 +10,23 @@ import Firebase
 import FirebaseFirestore
 import FirebaseAnalytics
 import RxSwift
+import RxKeyboard
+import SnapKit
 
 class PostDetailViewController: UIViewController {
     
     let postDetailVM = PostDetailViewModel()
     var postID: String = ""
-    let refreshControl = UIRefreshControl()
     
     let disposeBag = DisposeBag()
     
+    let refreshControl = UIRefreshControl()
+
     @IBOutlet var backButton: UIButton!
     @IBOutlet var postDetailTableView: UITableView!
     @IBOutlet var commentTextField: UITextField!
     @IBOutlet var uploadButton: UIButton!
+    @IBOutlet var commentStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,8 @@ class PostDetailViewController: UIViewController {
         // refreshControl
         refreshControl.tintColor = .gray
         refreshControl.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
+        // 키보드 위치에 따라 뷰 이동
+        hideKeyboardWhenTappedAround()
     }
     
     func action() {
@@ -61,6 +67,19 @@ class PostDetailViewController: UIViewController {
                 // TODO: - 업로드 성공했을 때 텍스트필드 비우는 식으로 변경
                 self.commentTextField.text = ""
             }
+            .disposed(by: disposeBag)
+        
+        RxKeyboard.instance.visibleHeight
+            .skip(1)    // 초기 값 버리기
+            .drive(onNext: { keyboardVisibleHeight in
+                print("rx키보드")
+                print(keyboardVisibleHeight)  // 346.0
+                self.commentStackView.snp.updateConstraints { make in
+                    UIView.animate(withDuration: 1) {
+                        make.bottom.equalToSuperview().inset(keyboardVisibleHeight)
+                    }
+                }
+            })
             .disposed(by: disposeBag)
     }
     
