@@ -19,8 +19,9 @@ class PostModel {
     var createdTime: Date
     var userID: String
     var userNickName: String
-    var likes: Int?
-    var dislikes: Int?
+    var likes: Int
+    var dislikes: Int
+    var comments: Int
 //    var audioURL: URL?
 //    var startTime: Int?
     
@@ -31,6 +32,9 @@ class PostModel {
         self.createdTime = (document.data()!["createdTime"] as! Timestamp).dateValue()
         self.userID = document.data()!["userID"] as? String ?? "userID 없음"
         self.userNickName = document.data()!["userNickName"] as? String ?? "닉네임 없음"
+        self.likes = document.data()!["likes"] as? Int ?? 0
+        self.dislikes = document.data()!["dislikes"] as? Int ?? 0
+        self.comments = document.data()!["comments"] as? Int ?? 0
     }
     
     func getCreateTimeStr() -> String {

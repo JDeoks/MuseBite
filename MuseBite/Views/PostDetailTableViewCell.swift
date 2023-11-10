@@ -13,6 +13,9 @@ class PostDetailTableViewCell: UITableViewCell {
     @IBOutlet var nickNameLabel: UILabel!
     @IBOutlet var createdTimeLabel: UILabel!
     @IBOutlet var descLabel: UILabel!
+    @IBOutlet var likesLabel: UILabel!
+    @IBOutlet var dislikesLabel: UILabel!
+    @IBOutlet var commentsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +32,8 @@ class PostDetailTableViewCell: UITableViewCell {
         nickNameLabel.text = post.userNickName
         createdTimeLabel.text = post.getCreateTimeStr()
         descLabel.text = post.desc
+        likesLabel.text = "\(post.likes)"
+        dislikesLabel.text = "\(post.dislikes)"
+        commentsLabel.text = "\(post.comments)"
     }
 }

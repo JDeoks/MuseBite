@@ -190,13 +190,13 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="commentCountLabel" destination="22j-up-G2N" id="S25-9J-QaC"/>
+                <outlet property="commentsLabel" destination="22j-up-G2N" id="S25-9J-QaC"/>
                 <outlet property="createdTimeLabel" destination="jrW-wg-tnk" id="xwR-Ph-CaB"/>
                 <outlet property="descLabel" destination="o4D-TL-yhd" id="Qa1-OQ-Wdj"/>
                 <outlet property="dislikeButton" destination="fL0-Jb-Vxw" id="mdm-Lk-n9N"/>
-                <outlet property="dislikeCountLabel" destination="h4M-Qk-k34" id="He1-Ni-T9r"/>
+                <outlet property="dislikesLabel" destination="h4M-Qk-k34" id="He1-Ni-T9r"/>
                 <outlet property="likeButton" destination="JYQ-By-Utu" id="B1I-Qf-xdN"/>
-                <outlet property="likeCountLabel" destination="4HL-bt-Tx7" id="ejE-KH-W6x"/>
+                <outlet property="likesLabel" destination="4HL-bt-Tx7" id="ejE-KH-W6x"/>
                 <outlet property="menuButton" destination="vD4-D5-Ynz" id="fpk-ZH-LWG"/>
                 <outlet property="titleLabel" destination="k7Y-GJ-MHP" id="qwK-pK-jC5"/>
                 <outlet property="userNickNameLabel" destination="su0-6e-Tyf" id="ZVL-aH-xLx"/>

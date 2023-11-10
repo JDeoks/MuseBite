@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -199,8 +199,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="commentsLabel" destination="WcZ-JA-zRH" id="tzN-31-rOJ"/>
                 <outlet property="createdTimeLabel" destination="05B-gw-V1R" id="eYX-0Q-IE3"/>
                 <outlet property="descLabel" destination="TWF-RE-rLd" id="awT-NM-wb6"/>
+                <outlet property="dislikesLabel" destination="hBa-st-Yq5" id="FvR-5W-kPq"/>
+                <outlet property="likesLabel" destination="8xs-tb-V7o" id="VQj-Py-cC3"/>
                 <outlet property="nickNameLabel" destination="Yq5-Es-hPw" id="3kr-wO-8Wj"/>
                 <outlet property="titleLabel" destination="w2y-Wo-Ssu" id="7h3-J2-HIX"/>
             </connections>

@@ -64,6 +64,12 @@ class NotificationViewController: UIViewController {
                 self.notificationTableView.reloadData()
             }
             .disposed(by: disposeBag)
+        
+        notificationViewModel.showDeletedPost
+            .subscribe { _ in
+                self.showDeletedPostAlert()
+            }
+            .disposed(by: disposeBag)
     }
 
 }

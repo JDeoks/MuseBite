@@ -16,13 +16,12 @@ class DataManager {
     static let shared = DataManager()
     private init() { }
     
-
     /// 커뮤니티 탭에서 사용할 포스트 배열
     var posts: [PostModel] = []
+    
     /// CommunityViewController - postTableView.reloadData()
     let fetchRecentPostDataDone = PublishSubject<Void>()
 
-    
     func fetchRecentPostData() {
         print("CommunityViewController - fetchRecentPostData()")
         
@@ -58,7 +57,10 @@ class DataManager {
             "desc": desc,
             "createdTime": Timestamp(date: Date()),
             "userID": LoginManager.shared.getUserID(),
-            "userNickName": LoginManager.shared.getUserNickName()
+            "userNickName": LoginManager.shared.getUserNickName(),
+            "likes": 0,
+            "dislikes": 0,
+            "comments": 0
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")

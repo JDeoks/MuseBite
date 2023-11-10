@@ -69,12 +69,12 @@ class PostDetailViewModel {
     
     func uploadComment(comment: String) {
         print("PostDetailViewModel - uploadComment(comment:)")
-        // 로그인 상태 상태 아닐 시
+        
+        // 로그인 상태 상태 아닐 시, 텍스트 비어있을 시 즉시 리턴
         if LoginManager.shared.getLoginStatus() == false {
             showLoginRequired.onNext(())
             return
         }
-        
         if comment == "" { return }
         
         let commentCollection = Firestore.firestore().collection("comment")
@@ -92,6 +92,7 @@ class PostDetailViewModel {
                 print("Document added with ID: \(ref!.documentID)")
 //                self.uploadCommentDone.onNext(())
                 self.registerNotification(comment: comment)
+                self.updateCommentsCount()
                 self.fetchRecentCommentData()
             }
         }
@@ -115,8 +116,22 @@ class PostDetailViewModel {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
-                self.fetchRecentCommentData()
             }
         }
+    }
+    
+    func updateCommentsCount() {
+        print("PostDetailViewModel - updateCommentsCount()")
+
+        let postDoc = Firestore.firestore().collection("post").document(postID)
+        postDoc.updateData([
+                "comments": FieldValue.increment(Int64(1))
+            ]) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document successfully updated!")
+                }
+            }
     }
 }

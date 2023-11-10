@@ -20,7 +20,9 @@ class NotificationViewModel {
     let fetchNotificationsDataDone = PublishSubject<Void>()
     /// NotificationViewController
     let getPostByIdDone = PublishSubject<Void>()
-
+    /// NotificationViewController
+    let showDeletedPost = PublishSubject<Void>()
+    
     func fetchNotificationsData() {
         print("NotificationViewModel - fetchNotificationsData()")
         
@@ -53,7 +55,7 @@ class NotificationViewModel {
               self.currentPost = PostModel(document: document)
               self.getPostByIdDone.onNext(())
           } else {
-            print("post Document does not exist")
+              self.showDeletedPost.onNext(())
           }
         }
     }

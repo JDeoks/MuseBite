@@ -17,9 +17,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet var createdTimeLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var dislikeButton: UIButton!
-    @IBOutlet var likeCountLabel: UILabel!
-    @IBOutlet var dislikeCountLabel: UILabel!
-    @IBOutlet var commentCountLabel: UILabel!
+    @IBOutlet var likesLabel: UILabel!
+    @IBOutlet var dislikesLabel: UILabel!
+    @IBOutlet var commentsLabel: UILabel!
     @IBOutlet var menuButton: UIButton!
     
     var myPostMenuItems: [UIAction] = {
@@ -78,12 +78,14 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setData(data: PostModel) {
-        
         postUserID = data.userID
         titleLabel.text = data.title
         descLabel.text = data.desc
         createdTimeLabel.text = data.getCreateTimeStr()
         userNickNameLabel.text = data.userNickName
+        likesLabel.text = "\(data.likes)"
+        dislikesLabel.text = "\(data.dislikes)"
+        commentsLabel.text = "\(data.comments)"
         
         // 여기서 버튼 유형 결정
         if postUserID == LoginManager.shared.getUserID() {
